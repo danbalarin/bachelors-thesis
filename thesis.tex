@@ -1,0 +1,51 @@
+% arara: xelatex
+% arara: xelatex
+% arara: xelatex
+
+\documentclass[thesis=B,czech]{template/FITthesis}[2019/03/06]
+\selectlanguage{czech}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{dirtree}
+
+% % list of acronyms
+\usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
+\iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
+\makeglossaries
+
+\newcommand{\tg}{\mathop{\mathrm{tg}}} %cesky tangens
+\newcommand{\cotg}{\mathop{\mathrm{cotg}}} %cesky cotangens
+
+\department{Katedra softwarového inženýrství}
+\title{Specializovaná webová aplikace pro výuku hry na ukulele}
+\authorGN{Dan} %(křestní) jméno (jména) autora
+\authorFN{Balarin} %příjmení autora
+\authorWithDegrees{Dan Balarin} %jméno autora včetně současných akademických titulů
+\author{Dan Balarin} %jméno autora bez akademických titulů
+\supervisor{Ing. Marek Suchánek}
+\acknowledgements{TODO\: Doplňte, máte-li komu a za co děkovat. V~opačném případě úplně odstraňte tento příkaz.}
+\abstractCS{TODO\: V~několika větách shrňte obsah a přínos této práce v~češtině. Po přečtení abstraktu by se čtenář měl mít čtenář dost informací pro rozhodnutí, zda chce Vaši práci číst.}
+\abstractEN{TODO\:Sem doplňte ekvivalent abstraktu Vaší práce v~angličtině.}
+\placeForDeclarationOfAuthenticity{V~Praze}
+\declarationOfAuthenticityOption{4} %volba Prohlášení (číslo 1-6)
+\keywordsCS{TODO\: Nahraďte seznamem klíčových slov v češtině oddělených čárkou.}
+\keywordsEN{TODO\: Nahraďte seznamem klíčových slov v angličtině oddělených čárkou.}
+\website{https://github.com/danbalarin/bachelors-thesis} %volitelná URL práce, objeví se v tiráži - úplně odstraňte, nemáte-li URL práce
+
+\begin{document}
+
+\input{chapters/00_introduction.tex}
+
+\input{chapters/90_conclusion.tex}
+
+\bibliographystyle{csn690}
+\bibliography{bybliography}
+
+\appendix
+
+\input{chapters/91_abbrevations.tex}
+
+\input{chapters/92_attachment.tex}
+
+\end{document}

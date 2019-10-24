@@ -1,5 +1,11 @@
 # :construction: WIP
 
+# Specialized Web-Application for Ukulele Learning
+
+:warning: This bachelors thesis is written in Czech, altough source code will be documented in english.
+
+**Source code** can be found in separate [repository]()
+
 # Specializovaná webová aplikace pro výuku hry na ukulele
 
 **Zdrojové kódy** jsou k nalezení v odděleném [repozitáři]()
@@ -14,9 +20,3 @@ akordů), metronom a správa databáze písniček s akordy včetně strumming pa
 - Navrhněte vlastní webovou aplikaci s důrazem na udržitelnost a možnosti budoucího rozvoje. Při návrhu rozdělte aplikaci na backend a frontend.
 - Implementujte webovou aplikaci dle návrhu, řádně ji otestujte a zdokumentujte. Volbu případných dalších technologií zdůvodněte.
 - Zhodnoťte přínosy aplikace, porovnejte s konkurenčními řešeními a navrhněte další možnosti rozvoje do budoucna.
-
-# Specialized Web-Application for Ukulele Learning
-
-:warning: This bachelors thesis is written in Czech, altough source code will be documented in english.
-
-**Source code** can be found in separate [repository]()
