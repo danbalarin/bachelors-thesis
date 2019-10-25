@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FITthesis}[2019/03/11 CTU FIT standard class for theses]
+\ProvidesClass{template/FITthesis}[2019/03/11 CTU FIT standard class for theses]
 
 % created by Ondrej Guth <ondrej.guth@fit.cvut.cz>
 
