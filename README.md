@@ -1,14 +1,15 @@
-# :construction: WIP
+![](https://github.com/danbalarin/bachelors-thesis/workflows/build/badge.svg)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 # Specialized Web-Application for Ukulele Learning
 
 :warning: This bachelors thesis is written in Czech, altough source code will be documented in english.
 
-**Source code** can be found in separate [repository]()
+**Source code** can be found in separate [repository](https://github.com/danbalarin/ukulele-learning-site)
 
 # Specializovaná webová aplikace pro výuku hry na ukulele
 
-**Zdrojové kódy** jsou k nalezení v odděleném [repozitáři]()
+**Zdrojové kódy** jsou k nalezení v odděleném [repozitáři](https://github.com/danbalarin/ukulele-learning-site)
 
 ## Popis
 
