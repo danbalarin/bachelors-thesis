@@ -35,7 +35,7 @@ jobs:
           args: -pdf -xelatex -file-line-error -interaction=nonstopmode
 
       - name: Rename PDF
-        run: mv main.pdf BP_Dan_Balarin.pdf
+        run: mv thesis.pdf BP_Dan_Balarin.pdf
         if: startsWith(github.ref, 'refs/tags/')
         
       - name: Checkout
