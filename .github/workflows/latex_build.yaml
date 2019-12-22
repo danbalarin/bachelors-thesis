@@ -36,11 +36,9 @@ jobs:
 
       - name: Rename PDF
         run: mv main.pdf BP_Dan_Balarin.pdf
-        if: startsWith(github.ref, 'refs/tags/')
 
       - name: Upload PDF to release assets
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: BP_Dan_Balarin.pdf
         env:
