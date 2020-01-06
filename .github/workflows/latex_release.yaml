@@ -19,6 +19,10 @@ jobs:
       - name: Run Arara
         run: arara thesis
 
+      - name: Cat log
+        if: failure()
+        run: cat thesis.log && ls -la
+
       # - name: Compile XeLaTeX document - 1
       #   uses: xu-cheng/latex-action@master
       #   with:
