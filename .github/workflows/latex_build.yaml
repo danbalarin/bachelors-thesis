@@ -15,3 +15,7 @@ jobs:
         with:
           root_file: thesis.tex
           args: -pdf -xelatex -file-line-error -interaction=nonstopmode
+      
+      - name: Cat log
+        if: failure()
+        run: cat thesis.log && ls -la
