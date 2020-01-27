@@ -1,4 +1,5 @@
-![](https://github.com/danbalarin/bachelors-thesis/workflows/build/badge.svg)
+![On commit build](https://github.com/danbalarin/bachelors-thesis/workflows/build/badge.svg)
+![Release](https://github.com/danbalarin/bachelors-thesis/workflows/release/badge.svg)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 # Specialized Web-Application for Ukulele Learning
