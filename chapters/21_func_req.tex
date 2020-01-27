@@ -1,0 +1,105 @@
+\section{Funkční požadavky}
+\label{sc:functional_req}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP01 Metronom} \label{FP01}
+    \begin{smallindent}{}
+        Aplikace zobrazí uživateli metronom. Uživatel má možnost si zvolit rychlost, postupné zrychlování a zapnout či vypnout metronom.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP02 Akordy} \label{FP02}
+    \begin{smallindent}{}
+        Aplikace zobrazí uživateli akordy, uživatel má možnost nastavit si naladění vlastních strun, uložit toto nastavení, přepínat mezi přednastavenými laděním (sopránové, baritonové...) a vybrat si nějakou podmnožinu akordů, která bude zobrazena.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP03 Strumming pattern}
+    \noindent \paragraph{FP03-1 Vyhledávání} \label{FP03-1}
+    \begin{smallindent}{}
+        Aplikace zobrazí uživateli katalog strumming patternů, uživatel má možnost řadit dle počtu výskytů v písních.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP03-2 Zobrazení} \label{FP03-2}
+    \begin{smallindent}{}
+        Aplikace zobrazí uživateli strumming pattern a metronom. Uživatel může ovládat metronom dle \hyperref[FP01]{FP01} a zobrazení strumming patternu reaguje na nastavení rychlosti metronomu.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP04 Přechytávání akordů}
+    \noindent \paragraph{FP04-1 Vlastní} \label{FP04-1}
+    \begin{smallindent}{}
+        Aplikace umožní uživateli si vytvořit vlastní seznam akordů, s volbou nastavení metronomu dle \hyperref[FP01]{FP01}, akordů dle \hyperref[FP02]{FP02} a případně strumming patternu dle \hyperref[FP03-2]{FP03-2}. Zobrazení strumming paternu má možnost vypnout. 
+        Přihlášený uživatel má možnost si dané nastavení uložit pod libovolným jménem.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP04-2 Dle písně} \label{FP04-2} 
+    \begin{smallindent}{}
+        Aplikace zobrazí uživateli přechytávání akordů dle \hyperref[FP04-1]{FP04-1} s přednastavenými parametry podle vybrané písně.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP05 Písně}
+    \noindent \paragraph{FP05-1 Vyhledávání} \label{FP05-1}
+    \begin{smallindent}{}
+        Aplikace zobrazí uživateli katalog písní, uživatel může filtrovat dle obtížnosti, jména, autora, nebo použitých akordů.
+        Přihlášený uživatel může filtrovat ještě podle oblíbených.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP05-2 Zobrazení} \label{FP05-2}
+    \begin{smallindent}{}
+        Aplikace zobrazí uživateli text písně, akordy a strumming pattern dle \hyperref[FP03-2]{FP03-2}. Uživatel má možnost prokliku na přechytávání akordů dle \hyperref[FP04-2]{FP04-2} a případně odkaz na přehrání písně na serveru třetí strany (např. youtube, spotify).
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP06 Registrace} \label{FP06}
+    \begin{smallindent}{}
+        Aplikace vytvoří nový učet uživatele.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP11 Přihlášení} \label{FP11}
+    \begin{smallindent}{}
+        Aplikace přihlásí uživatele s údaji od uživatele.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP12 Odhlášení} \label{FP12}
+    \begin{smallindent}{}
+        Aplikace odhlásí uživatele.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP13 Nastavení ladění} \label{FP12}
+    \begin{smallindent}{}
+        Aplikace nastaví ladění ukulele uživatele podle vstupu od uživatele
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP21 Vytvoření písně} \label{FP21}
+    \begin{smallindent}{}
+        Aplikace umožňuje uživateli vytvořit nový záznam o písni.
+    \end{smallindent}
+\end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP22 Úprava písně} \label{FP22}
+    \begin{smallindent}{}
+        Aplikace umožňuje uživateli upravit existující záznam o písni.
+    \end{smallindent}
+\end{minipage}

@@ -34,6 +34,15 @@
 \keywordsEN{TODO\: Nahraďte seznamem klíčových slov v angličtině oddělených čárkou.}
 \website{https://github.com/danbalarin/bachelors-thesis} %volitelná URL práce, objeví se v tiráži - úplně odstraňte, nemáte-li URL práce
 
+\newcommand{\smallindentsize}{1cm}
+
+\newenvironment{smallindent}{%
+    \begin{adjustwidth}{\smallindentsize}%
+}{%
+    \end{adjustwidth}%
+    \bigskip
+}
+
 \begin{document}
 
 \input{chapters/00_introduction.tex}

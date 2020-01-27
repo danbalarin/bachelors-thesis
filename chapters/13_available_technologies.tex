@@ -1,0 +1,45 @@
+\section{Dostupné technologie}
+\label{sc:available_technologies}
+Aplikace by měla být co nejdostupnější pro běžného uživatele, ideálně by tecy neměla vyžadovat stahování nebo instalaci. Z podstaty této aplikace to ani není potřeba. Jediná výhoda kterou přináší desktopová aplikace je přímý přístup k hardware a lepší výkon, jelikož ale tento typ aplikace nepotřebuje vykreslovat pokročilou 3D grafiku nebo spouštět složité algoritmy, tak je zbytečné se tím zabývat.
+
+Nabízí se tedy webová aplikace nebo mobilní aplikace. Oba typy aplikací se dělí na dvě části, část kterou vidí a se kterou intereaguje uživatel nebo správce, která se nazývá frontend a část která obsluhuje práci s databází, zpracovává požadavky na změny, autorizuje uživatele, atd. Jeden backend přitom může obsluhovat frontend jak podobě webové, tak i mobilní aplikace. Rozdělíme si tedy sekce na \nameref{ss:backend}, \nameref{ss:web} a \nameref{ss:mobile}.
+
+\subsection{Backend}
+\label{ss:backend}
+Backend tvoří páteř aplikací, zprostředkovává přístup k informacím, umožňuje úpravy a autorizuje uživatele. Z toho důvodu, je třeba dbát na kvalitu a hlavně bezpečnost kódu. Špatně autorizovaný uživatel, nebo nezabezpečená část databáze je velká bezpečnostní díra a tomu se musí předejít. Nedá se spoléhat na to, že uživatele ověřil frontend, jelikož se s daty na frontendu dá manipulovat (jak na webu, tak i v mobilu), a proto veškeré ověřování probíhá na serveru. Ověřování na frontendu tedy slouží jako čistě estetická záležitost.
+
+Dalším důležitým faktorem je rychlost. Rychlost může ovlivnit několik faktorů, jako je třeba využití složitých algoritmů bez paralelizace, pomalý databázový server, nebo neoptimalizované databázové požadavky.
+
+Při výběru je třeba tedy dbát hlavně na bezpečnost a rychlost. Avšak je třeba zvážit i tzv. code reuse, tedy částečné přepoužití kódu, které muže zjednodušit a zpřehlednit kód aplikace.
+
+\subsubsection{Javascript}
+Javascript je \textit{otevřený multiplatformní skriptovací jazyk pro tvorbu a přizpůsobení aplikací v podnikových sítích a na internetu.} \cite{netscapecommunicationscorporation_1995_press}, jako první implementovaný prohlížečem Netscape Navigator 2.0 a rychle adaptován ostatními prohlížeči.
+
+Výhodou je multiplatformnost a jednoduchost vývoje a nasazení. Hlavní nevýhodou Javascriptu je, že Javascript je dynamicky typovaný, což vede k horší udržitelnosti kódu a odhalení většiny chyb až při běhu aplikace (absence statické kontroly). Tyto neduhy se dají odstranit použitím nějakou syntaktickou nadstavbou, jako je třeba Typescript nebo Flow, které přidávají statické typování proměnných a statickou kontrolu při překladu do Javascriptu.
+
+Javascript se původně vyskytoval jen v prohlížeči, což znamená že nebyl použitelný pro vývoj desktopových a serverových aplikací. To se změnilo s příchodem Node.js. Node.js je prostředí, které umožňuje spouštět javascriptové skripty mimo prohlížeč.
+
+\subsubsection{Java}
+Staticky typovaný, multiplatformní programovací jazyk vycházející z jazyka C, zaštítěný firmou Oracle, Java, patří mezi nejpopulárnější a nejužívanější programovací jazyky \cite{stackexchangeinc_2019_stack} . Jeho hlavní užití je právě na straně serveru, a to v kombinaci s frameworkem Spring Boot \cite{jetbrainssro_2019_demographics} .
+
+\subsubsection{C\# }
+Jazyk velmi podobný Javě, vyvýjený firmou Microsoft. Jeho hlavní nevýhodou byla vysoká závislost na frameworku .NET, který až do příchodu alternativy .NET Core, byl spustitelný pouze na operačním systému Microsoft Windows.
+
+\subsection{Web}
+\label{ss:web}
+Webová aplikace je pro uživatele nejpřístupnější formou, nemusí nic instalovat, stahovat, pouze otevře prohlížeč s webovou adresou a aplikaci má přístupnou a to jak na počítači, tak i na mobilu. Nevýhoda oproti mobilní aplikace je, že vyžaduje přístup k internetu (ne vždy, viz PWA **TODO**).
+
+\subsubsection{Javascript}
+Pro vývoj webové aplikace lze v Javascriptu zvolit z mnoha možností, ať už co se týče syntaktické nadstavby (Typescript, Flow), nebo knihoven a frameworků. Jelikož jich je velké množství, tak si jen stručně probereme tři nejpopulárnější a to React.JS, Angular a Vue.
+
+React.JS je knihovna vyvýjená společností Facebook, která ho sama využívá pro tvorbu jejich aplikací jako je třeba Instagram, nebo WhatsApp. Jeho hlavní výhodou je možnost si spoustu věcí přizpůsobit k vlastní potřebě (např. routing, globalní uložiště dat, ...), což mimo jiné vede k menší velikosti výsledné aplikace a vyšší rychlosti. React sám o sobě není ani závislý na prohlížeči a může být využit např. pro vývoj aplikace spouštěné z příkazové řádky.
+
+Angular je framework od společnosti Google, taktéž využívaný v řadě aplikací. Hlavní výhodou je, že Angular nabízí téměř vše co může programátor potřebovat, díky čemuž nemusí programátor řešit občasné potíže s kompatibilitou knihoven jako u Reactu, ale na druhou stranu je výsledná aplikace velká a pomalejší, jelikož obsahuje i nevyužívané funkce.
+
+Vue je knihovna velmi podobná Reactu, sdílí spolu velkou část přístupů, ale Vue se zaměřuje na projekty malé až střední a React in na ty velké. Výhoda tedy je rychlost a jednoduchost, nevýhoda je, že ve velkém projektu se programátor, nebo tým programátorů může rychle začít ztrácet a zpomalí se vývoj.
+
+\subsubsection{C\# }
+V C\# se dá vyvýjet i frontend a to za pomoci frameworku ASP.NET, který závisí na frameworku .NET. V dnešní době se na nové projekty již příliž nevyužívá. Lze jej využít v kombinaci s Javascriptem a jeho knihovnami. Největší výhoda tohoto přístupu je striktní dodržení přístupu Model-View-Controler, nevýhodou jsou vyšší nároky na znalost obou technologií, což pro juniorního programátora může být problém.
+
+\subsection{Mobil}
+\label{ss:mobile}
