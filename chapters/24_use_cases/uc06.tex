@@ -1,0 +1,29 @@
+\begin{usecase}{PU06 Správa písně}{uc06}
+    Případ užití umožňuje moderátorovi vytvořit novou píseň, případně upravit již existující.
+
+    \begin{scenario}{HS: Zobrazení podrobností}{uc06:hs}
+        \item TODO
+    \end{scenario}
+
+    \begin{scenario}{AS01: Vytvoření}{uc06:as01}
+        \item Aplikace zobrazí formulář pro vyplnění vstupních dat.
+        \item Jakmile moderátor potvrdí formulář, aplikace validuje data podle \nameref{uc06:alg1}.
+        \item Pokud selže validace, pak je uživatel zobrazena chybová hláška a scénář končí.
+        \item Aplikace uloží data.               
+    \end{scenario}
+
+    \begin{scenario}{AS02: Editace}{uc06:as02}
+        \item Aplikace zobrazí formulář pro vyplnění vstupních dat s předvyplněnými hodnotami podle editované písně.
+        \item Jakmile moderátor potvrdí formulář, pak:
+        \begin{enumerate}
+            \item Pokud jsou data nezměněna, pak scénář končí.
+            \item Jinak Aplikace validuje data podle \nameref{uc06:alg1}.
+        \end{enumerate}
+        \item Pokud selže validace, pak je uživatel zobrazena chybová hláška a scénář končí.
+        \item Aplikace uloží data.
+    \end{scenario}
+
+    \begin{scenario}{Alg.1}{uc06:alg1}
+        \item TODO
+    \end{scenario}
+\end{usecase}

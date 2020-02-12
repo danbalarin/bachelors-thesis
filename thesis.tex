@@ -36,6 +36,23 @@
 
 \newcommand{\smallindentsize}{1cm}
 
+\newenvironment{usecase}[2]{
+    \noindent
+    \paragraph{#1}
+    \label{#2}
+    \begin{smallindent}{}
+}{
+    \end{smallindent}
+}
+
+\newenvironment{scenario}[2]{
+    \paragraph{#1}
+    \label{#2}
+    \begin{enumerate}
+}{
+    \end{enumerate}
+}
+
 \newenvironment{smallindent}{%
     \begin{adjustwidth}{\smallindentsize}%
 }{%

@@ -1,0 +1,30 @@
+\begin{usecase}{PU07 Správa uživatelského profilu}{uc07}
+    Případ užití umožní uživateli si zobrazit vlastní uživatelský profil a upravovat některé hodnoty.
+
+    \begin{scenario}{HS: Zobrazení profilu}{uc07:hs}
+        \item Scénář začne když uživatel zobrazí tuto komponentu.
+        \item Aplikace zobrazí uživatelský profil s předvyplněnými polemi.
+    \end{scenario}
+
+    \begin{scenario}{AS01: Úprava hodnot}{uc07:as01}
+        \item Scénář začne, když uživatel změní hodnotu v některém z polí.
+        \item Aplikace umožní upravit hodnoty některých polí.
+        \item Aplikace zobrazí tlačítko sloužící k uložení informací \uv{Save}.
+        \item Po kliknutí na tlačítko \uv{Save} aplikace provede validace polí podle \nameref{uc07:alg1}.
+        \begin{itemize}
+            \item Pokud validace proběhnou úspěšně, pak jsou informace odeslány na server a pokračuje se \hyperref[uc02:as02]{AS02}.
+            \item Jinak jsou zobrazeny chybové hlášky podle toho, jaké validace selhaly.
+        \end{itemize}
+        \item Pokud uživatel chce opustit stránku před uložením změněných hodnot, tak je o tom informován s možností uložit hodnoty.
+    \end{scenario}
+
+    \begin{scenario}{AS02: Přenačtení hodnot}{uc07:as02}
+        \item Scénář začne po kliknutí na tlačítko \uv{Refresh}.
+        \item Aplikace přenačte hodnoty ze serveru a aktualizuje pole.
+        \item Scénář končí.        
+    \end{scenario}
+
+    \begin{scenario}{Alg.1}{uc07:alg1}
+        \item TODO
+    \end{scenario}
+\end{usecase}

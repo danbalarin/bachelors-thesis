@@ -1,0 +1,27 @@
+\begin{usecase}{PU04 Výuka písní}{uc04}
+    Případ užití umožní uživateli zobrazovat písně s texty, akordy, metronomem a doporučeným strumming patternem.
+
+    \begin{scenario}{HS: Zobrazení stránky písně}{uc04:hs}
+        \item Scénář začne po přechodu na stránku písničky.
+        \item Aplikace zobrazí komponentu z \hyperref[uc03]{PU03}.
+        \begin{itemize}
+            \item Nastaví strumming pattern, akordy a tempo dle písničky a znemožní editaci těchto paramterů.
+        \end{itemize}
+        \item Aplikace zobrazí text písně a ovládání automatického odsouvání.
+    \end{scenario}
+   
+    \begin{scenario}{AS01: Zapnutí automatického odsouvání}{uc04:as01}
+        \item Scénař začne když uživatel klikne na tlačítko \uv{Start}.
+        \item Aplikace spustí automatické odsouvání s nastaveným parametrem.
+        \begin{itemize}
+            \item Aplikace reaguje na změny parametru okamžitě.
+        \end{itemize}
+        \item Tlačitko \uv{Start} se změní na tlačítko \uv{Stop} a scénář končí.
+    \end{scenario}
+
+    \begin{scenario}{AS02: Vypnutí automatického odsouvání}{uc04:as02}
+        \item Scénář začne když uživatel klikne na tlačítko \uv{Stop}.
+        \item Aplikace vypne automatické odsouvání.
+        \item Tlačítko \uv{Stop} se změní na \uv{Start}.
+    \end{scenario}
+\end{usecase}

@@ -1,0 +1,27 @@
+\begin{usecase}{PU02 Výuka akordů}{uc02}
+    Případ užití umožní uživateli vyhledávat akordy, vybírat zobrazenou podmnožinu, přepínat mezi přednastavenými laděními ukulele (sopranové, baritonové) nebo si nastavit svoje vlastní. Pokud je uživatel přihlášen, pak má možnost si toto nastavení uložit jako svoje výchozí.
+
+    \begin{scenario}{HS: Zobrazení akordů}{uc02:hs}
+        \item Scénář začne po přechodu na stránku s akordy.
+        \item Aplikace zobrazí uživateli vyhledávací pole, které se řídí dle \hyperref[uc02:as01]{AS01}
+        \item Aplikace zobrazí uživateli komponentu nastavování ladění, která se řídí dle \hyperref[uc02:as02]{AS02}
+    \end{scenario}
+
+    \begin{scenario}{AS01: Vyhledání akordu}{uc02:as01}
+        \item Scénář začne, když uživatel klikne do vyhledávacího pole nebo vyhledávací pole získá focus.
+        \item Aplikace reaguje na vstup uživatele tak, že po každé změně hodnoty vyfiltruje akordy podle \nameref{uc02:alg1}
+    \end{scenario}
+
+    \begin{scenario}{AS02: Přepnutí ladění podle přednastavené hodnoty}{uc02:as02}
+        \item Scénář začne po výběru z nabídky přednastavených hodnot.
+        \item Aplikace nastaví toto ladění jako aktualní ladění a scénář končí.        
+    \end{scenario}
+
+    \begin{scenario}{Alg.1}{uc02:alg1}
+        \item Pokud text začíná znakem z množiny [\uv{a}, \uv{b}, \uv{c}, \uv{d}, \uv{e}, \uv{f}, \uv{g}] pak filtruje výsledky podle daného znaku.
+        \item Pokud text obsahuje podřetězec \uv{maj}, pak vrátí pouze Major akordy.
+        \item Pokud text obsahuje podřetězec \uv{min}, pak vrátí pouze Minor akordy.
+        \item Pokud text obsahuje jeden z podřetězců [\uv{dom}, \uv{7}], pak vrátí pouze Dominant akordy.
+        \item Vrátí vyfiltrované výsledky.        
+    \end{scenario}
+\end{usecase}
