@@ -16,7 +16,7 @@
 \end{minipage}
 
 \noindent \begin{minipage}{\textwidth}
-    \paragraph{FP03 Zobrazení strumming patternu} \label{FP03}
+    \paragraph{FP03 Strumming pattern} \label{FP03}
     \begin{smallindent}{}
         Aplikace zobrazí uživateli strumming pattern a metronom. Uživatel může ovládat metronom dle \hyperref[FP01]{FP01} a zobrazení strumming patternu reaguje na nastavení rychlosti metronomu.
     \end{smallindent}
@@ -32,7 +32,7 @@
 \noindent \begin{minipage}{\textwidth}
     \paragraph{FP05 Přechytávání akordů} \label{FP05}
     \begin{smallindent}{}
-        Aplikace umožní uživateli si vytvořit vlastní seznam akordů, s volbou nastavení metronomu dle \hyperref[FP01]{FP01}, akordů dle \hyperref[FP02]{FP02} a případně strumming patternu dle \hyperref[FP03-2]{FP03-2}. Zobrazení strumming paternu má možnost vypnout. 
+        Aplikace umožní uživateli si vytvořit vlastní seznam akordů, s volbou nastavení metronomu dle \hyperref[FP01]{FP01} a akordů dle \hyperref[FP02]{FP02}.
         Přihlášený uživatel má možnost si dané nastavení uložit pod libovolným jménem.
     \end{smallindent}
 \end{minipage}
@@ -40,78 +40,76 @@
 \noindent \begin{minipage}{\textwidth}
     \paragraph{FP06 Přechytávání akordů dle písně} \label{FP06} 
     \begin{smallindent}{}
-        \textbf{<<extends>> \hyperref[FP05]{FP05}} \\
         Aplikace zobrazí uživateli přechytávání akordů dle \hyperref[FP05]{FP05} s přednastavenými parametry podle vybrané písně.
     \end{smallindent}
 \end{minipage}
 
+
 \noindent \begin{minipage}{\textwidth}
-    \paragraph{FP05 Písně}
-    \noindent \paragraph{FP05-1 Vyhledávání} \label{FP05-1}
+    \paragraph{FP07 Zobrazení písně} \label{FP07}
     \begin{smallindent}{}
-        Aplikace zobrazí uživateli katalog písní, uživatel může filtrovat dle obtížnosti, jména, autora, nebo použitých akordů.
-        Přihlášený uživatel může filtrovat ještě podle oblíbených.
+        Aplikace zobrazí uživateli text písně, akordy písně a strumming pattern dle \hyperref[FP03]{FP03}. Uživatel má možnost přechodu na přechytávání akordů dle \hyperref[FP06]{FP06} a případně odkaz na přehrání písně na serveru třetí strany (např. youtube, spotify).
     \end{smallindent}
 \end{minipage}
 
 \noindent \begin{minipage}{\textwidth}
-    \paragraph{FP05-2 Zobrazení} \label{FP05-2}
+    \paragraph{FP08 Registrace} \label{FP08}
     \begin{smallindent}{}
-        Aplikace zobrazí uživateli text písně, akordy a strumming pattern dle \hyperref[FP03-2]{FP03-2}. Uživatel má možnost prokliku na přechytávání akordů dle \hyperref[FP04-2]{FP04-2} a případně odkaz na přehrání písně na serveru třetí strany (např. youtube, spotify).
+        Aplikace umožní zaregistrovat nového uživatele.
     \end{smallindent}
 \end{minipage}
 
 \noindent \begin{minipage}{\textwidth}
-    \paragraph{FP06 Registrace} \label{FP06}
+    \paragraph{FP09 Přihlášení} \label{FP09}
     \begin{smallindent}{}
-        Aplikace vytvoří nový učet uživatele.
+        Aplikace umožní uživateli se přihlásit.
     \end{smallindent}
 \end{minipage}
 
 \noindent \begin{minipage}{\textwidth}
-    \paragraph{FP11 Přihlášení} \label{FP11}
+    \paragraph{FP22 Odhlášení} \label{FP22}
     \begin{smallindent}{}
-        Aplikace přihlásí uživatele s údaji od uživatele.
+        Aplikace umožní odhlásit přihlášeného uživatele.
     \end{smallindent}
 \end{minipage}
 
 \noindent \begin{minipage}{\textwidth}
-    \paragraph{FP12 Odhlášení} \label{FP12}
+    \paragraph{FP23 Úprava profilu} \label{FP23}
     \begin{smallindent}{}
-        Aplikace odhlásí přihlášeného uživatele.
+        Aplikace umožní přihlášenému uživateli měnit svoje údaje.
+    \end{smallindent}
+\end{minipage}
+
+% \noindent \begin{minipage}{\textwidth}
+%     \paragraph{FP13 Nastavení ladění} \label{FP13}
+%     \begin{smallindent}{}
+%         Aplikace nastaví ladění ukulele přihlášeného uživatele podle vstupu od uživatele.
+%     \end{smallindent}
+% \end{minipage}
+
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{FP24 Oblíbení písně} \label{FP24}
+    \begin{smallindent}{}
+        Aplikace umožní příhlášenému uživateli označit píseň jako oblíbenou.
     \end{smallindent}
 \end{minipage}
 
 \noindent \begin{minipage}{\textwidth}
-    \paragraph{FP13 Nastavení ladění} \label{FP13}
-    \begin{smallindent}{}
-        Aplikace nastaví ladění ukulele přihlášeného uživatele podle vstupu od uživatele.
-    \end{smallindent}
-\end{minipage}
-
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP14 Oblíbení písně} \label{FP14}
-    \begin{smallindent}{}
-        Aplikace nastaví píseň jako oblíbenou.
-    \end{smallindent}
-\end{minipage}
-
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP21 Vytvoření písně} \label{FP21}
+    \paragraph{FP41 Vytvoření písně} \label{FP41}
     \begin{smallindent}{}
         Aplikace umožňuje moderátorovi vytvořit nový záznam o písni.
     \end{smallindent}
 \end{minipage}
 
 \noindent \begin{minipage}{\textwidth}
-    \paragraph{FP22 Úprava písně} \label{FP22}
+    \paragraph{FP42 Úprava písně} \label{FP42}
     \begin{smallindent}{}
         Aplikace umožňuje moderátorovi upravit existující záznam o písni.
     \end{smallindent}
 \end{minipage}
 
 \noindent \begin{minipage}{\textwidth}
-    \paragraph{FP33 Úprava rolí uživatele} \label{FP33}
+    \paragraph{FP61 Úprava rolí uživatele} \label{FP61}
     \begin{smallindent}{}
         Aplikace umožňuje administrátorovi změnit role uživatele.
     \end{smallindent}
