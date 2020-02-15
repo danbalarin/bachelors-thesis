@@ -1,84 +1,50 @@
 \section{Funkční požadavky}
 \label{sc:functional_req}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP01 Metronom} \label{FP01}
-    \begin{smallindent}{}
-        Aplikace zobrazí uživateli metronom. Uživatel má možnost si zvolit rychlost, postupné zrychlování a zapnout či vypnout metronom.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP01 Metronom}{FP01}
+    Aplikace zobrazí uživateli metronom. Uživatel má možnost si zvolit rychlost, postupné zrychlování a zapnout či vypnout metronom.
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP02 Akordy} \label{FP02}
-    \begin{smallindent}{}
-        Aplikace zobrazí uživateli akordy, uživatel má možnost nastavit si naladění vlastních strun, uložit toto nastavení, přepínat mezi přednastavenými laděním (sopránové, baritonové...) a vybrat si nějakou podmnožinu akordů, která bude zobrazena.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP02 Akordy}{FP02}
+    Aplikace zobrazí uživateli akordy, uživatel má možnost nastavit si naladění vlastních strun, uložit toto nastavení, přepínat mezi přednastavenými laděním (sopránové, baritonové...) a vybrat si nějakou podmnožinu akordů, která bude zobrazena.
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP03 Strumming pattern} \label{FP03}
-    \begin{smallindent}{}
-        Aplikace zobrazí uživateli strumming pattern a metronom. Uživatel může ovládat metronom dle \hyperref[FP01]{FP01} a zobrazení strumming patternu reaguje na nastavení rychlosti metronomu.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP03 Strumming pattern}{FP03}
+    Aplikace zobrazí uživateli strumming pattern a metronom. Uživatel může ovládat metronom dle \hyperref[FP01]{FP01} a zobrazení strumming patternu reaguje na nastavení rychlosti metronomu.
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP04 Vyhledávání} \label{FP04}
-    \begin{smallindent}{}
-        Aplikace umožní uživateli vyhledávát písně, akordy a strumming patterny.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP04 Vyhledávání}{FP04}
+    Aplikace umožní uživateli vyhledávát písně, akordy a strumming patterny.
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP05 Přechytávání akordů} \label{FP05}
-    \begin{smallindent}{}
-        Aplikace umožní uživateli si vytvořit vlastní seznam akordů, s volbou nastavení metronomu dle \hyperref[FP01]{FP01} a akordů dle \hyperref[FP02]{FP02}.
+\begin{requirment}{FP05 Přechytávání akordů}{FP05}
+    Aplikace umožní uživateli si vytvořit vlastní seznam akordů, s volbou nastavení metronomu dle \hyperref[FP01]{FP01} a akordů dle \hyperref[FP02]{FP02}.
         Přihlášený uživatel má možnost si dané nastavení uložit pod libovolným jménem.
-    \end{smallindent}
-\end{minipage}
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP06 Přechytávání akordů dle písně} \label{FP06} 
-    \begin{smallindent}{}
-        Aplikace zobrazí uživateli přechytávání akordů dle \hyperref[FP05]{FP05} s přednastavenými parametry podle vybrané písně.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP06 Přechytávání akordů dle písně}{FP06} 
+    Aplikace zobrazí uživateli přechytávání akordů dle \hyperref[FP05]{FP05} s přednastavenými parametry podle vybrané písně.
+\end{requirment}
 
+\begin{requirment}{FP07 Zobrazení písně}{FP07}
+    Aplikace zobrazí uživateli text písně, akordy písně a strumming pattern dle \hyperref[FP03]{FP03}. Uživatel má možnost přechodu na přechytávání akordů dle \hyperref[FP06]{FP06} a případně odkaz na přehrání písně na serveru třetí strany (např. youtube, spotify).
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP07 Zobrazení písně} \label{FP07}
-    \begin{smallindent}{}
-        Aplikace zobrazí uživateli text písně, akordy písně a strumming pattern dle \hyperref[FP03]{FP03}. Uživatel má možnost přechodu na přechytávání akordů dle \hyperref[FP06]{FP06} a případně odkaz na přehrání písně na serveru třetí strany (např. youtube, spotify).
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP08 Registrace}{FP08}
+    Aplikace umožní zaregistrovat nového uživatele.
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP08 Registrace} \label{FP08}
-    \begin{smallindent}{}
-        Aplikace umožní zaregistrovat nového uživatele.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP09 Přihlášení}{FP09}
+    Aplikace umožní uživateli se přihlásit.
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP09 Přihlášení} \label{FP09}
-    \begin{smallindent}{}
-        Aplikace umožní uživateli se přihlásit.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP22 Odhlášení}{FP22}
+    Aplikace umožní odhlásit přihlášeného uživatele.
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP22 Odhlášení} \label{FP22}
-    \begin{smallindent}{}
-        Aplikace umožní odhlásit přihlášeného uživatele.
-    \end{smallindent}
-\end{minipage}
-
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP23 Úprava profilu} \label{FP23}
-    \begin{smallindent}{}
-        Aplikace umožní přihlášenému uživateli měnit svoje údaje.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP23 Úprava profilu}{FP23}
+    Aplikace umožní přihlášenému uživateli měnit svoje údaje.
+\end{requirment}
 
 % \noindent \begin{minipage}{\textwidth}
 %     \paragraph{FP13 Nastavení ladění} \label{FP13}
@@ -87,30 +53,18 @@
 %     \end{smallindent}
 % \end{minipage}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP24 Oblíbení písně} \label{FP24}
-    \begin{smallindent}{}
-        Aplikace umožní příhlášenému uživateli označit píseň jako oblíbenou.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP24 Oblíbení písně}{FP24}
+    Aplikace umožní příhlášenému uživateli označit píseň jako oblíbenou.
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP41 Vytvoření písně} \label{FP41}
-    \begin{smallindent}{}
-        Aplikace umožňuje moderátorovi vytvořit nový záznam o písni.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP41 Vytvoření písně}{FP41}
+    Aplikace umožňuje moderátorovi vytvořit nový záznam o písni.
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP42 Úprava písně} \label{FP42}
-    \begin{smallindent}{}
-        Aplikace umožňuje moderátorovi upravit existující záznam o písni.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP42 Úprava písně}{FP42}
+    Aplikace umožňuje moderátorovi upravit existující záznam o písni.
+\end{requirment}
 
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{FP61 Úprava rolí uživatele} \label{FP61}
-    \begin{smallindent}{}
-        Aplikace umožňuje administrátorovi změnit role uživatele.
-    \end{smallindent}
-\end{minipage}
+\begin{requirment}{FP61 Úprava rolí uživatele}{FP61}
+    Aplikace umožňuje administrátorovi změnit role uživatele.
+\end{requirment}

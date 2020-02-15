@@ -53,6 +53,16 @@
     \end{enumerate}
 }
 
+\newenvironment{requirment}[2]{
+\noindent \begin{minipage}{\textwidth}
+    \paragraph{#1}
+    \label{#2}
+    \begin{smallindent}{}
+}{
+    \end{smallindent}
+\end{minipage}
+}
+
 \newenvironment{smallindent}{%
     \begin{adjustwidth}{\smallindentsize}%
 }{%
