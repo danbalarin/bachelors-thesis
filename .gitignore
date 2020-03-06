@@ -13,4 +13,10 @@
 *.blg
 *.xdv
 *.pdf
+*.acr
+*.alg
+*.glg
+*.gls*
+*.lot
+__latex*
 !*assets/*.pdf
