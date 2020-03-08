@@ -3,13 +3,13 @@
 
     \begin{scenario}{HS: Zobrazení tlačítka}{uc09:hs}
         \item Scénář začne po zobrazení komponenty.
-        \item Pokud uživatel není přihlášen, pak aplikace zobrazí tlačítko \uv{Přihlásit}, pole pro vyplnění přihlašovacího jména a hesla.
-        \item Jinak aplikace zobrazí tlačítko \uv{Odhlásit}.
+        \item Pokud uživatel není přihlášen, pak aplikace zobrazí tlačítko \enquote{Přihlásit}, pole pro vyplnění přihlašovacího jména a hesla.
+        \item Jinak aplikace zobrazí tlačítko \enquote{Odhlásit}.
     \end{scenario}
 
 
     \begin{scenario}{AS01: Přihlášení}{uc09:as01}
-        \item Scénář začne po stisknutí tlačítka \uv{Přihlásit}
+        \item Scénář začne po stisknutí tlačítka \enquote{Přihlásit}
         \item Aplikace provede kontrolu vyplnění hodnot polí přihlašovací jméno a heslo. Pokud alespoň jedna není vyplněna, pak aplikace zobrazí chybovou hlášku a scénář končí.
         \item Aplikace zjistí, jestli existuje přihlašovací jméno v databázi uživatelů a jestli heslo k němu přiřazené odpovídá tomu ze vstupu.
         \item Pokud ano, pak je uživatel přihlášen a komponenta se přenačte.
@@ -17,7 +17,7 @@
     \end{scenario}
     
     \begin{scenario}{AS02: Odhlášení}{uc09:as02}
-        \item Scénář začne po stisknutí tlačítka \uv{Odhlásit}.
+        \item Scénář začne po stisknutí tlačítka \enquote{Odhlásit}.
         \item Aplikace odhlásí uživatele a přenačte komponentu.
     \end{scenario}
 \end{usecase}

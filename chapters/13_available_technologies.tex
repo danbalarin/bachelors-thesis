@@ -12,24 +12,24 @@ Dalším důležitým faktorem je rychlost. Rychlost může ovlivnit několik fa
 
 Při výběru je třeba tedy dbát hlavně na bezpečnost a rychlost. Avšak je třeba zvážit i tzv. code reuse, tedy částečné přepoužití kódu, které muže zjednodušit a zpřehlednit kód aplikace.
 
-\subsubsection{Javascript}
+\subsubsection*{Javascript}
 Javascript je \textit{otevřený multiplatformní skriptovací jazyk pro tvorbu a přizpůsobení aplikací v podnikových sítích a na internetu.} \cite{netscapecommunicationscorporation_1995_press}, jako první implementovaný prohlížečem Netscape Navigator 2.0 a rychle adaptován ostatními prohlížeči.
 
 Výhodou je multiplatformnost a jednoduchost vývoje a nasazení. Hlavní nevýhodou Javascriptu je, že Javascript je dynamicky typovaný, což vede k horší udržitelnosti kódu a odhalení většiny chyb až při běhu aplikace (absence statické kontroly). Tyto neduhy se dají odstranit použitím nějakou syntaktickou nadstavbou, jako je třeba Typescript nebo Flow, které přidávají statické typování proměnných a statickou kontrolu při překladu do Javascriptu.
 
 Javascript se původně vyskytoval jen v prohlížeči, což znamená že nebyl použitelný pro vývoj desktopových a serverových aplikací. To se změnilo s příchodem Node.js. Node.js je prostředí, které umožňuje spouštět javascriptové skripty mimo prohlížeč.
 
-\subsubsection{Java}
+\subsubsection*{Java}
 Staticky typovaný, multiplatformní programovací jazyk vycházející z jazyka C, zaštítěný firmou Oracle, Java, patří mezi nejpopulárnější a nejužívanější programovací jazyky \cite{stackexchangeinc_2019_stack} . Jeho hlavní užití je právě na straně serveru, a to v kombinaci s frameworkem Spring Boot \cite{jetbrainssro_2019_demographics} .
 
-\subsubsection{C\# }
+\subsubsection*{C\# }
 Jazyk velmi podobný Javě, vyvýjený firmou Microsoft. Jeho hlavní nevýhodou byla vysoká závislost na frameworku .NET, který až do příchodu alternativy .NET Core, byl spustitelný pouze na operačním systému Microsoft Windows.
 
 \subsection{Web}
 \label{ss:web}
 Webová aplikace je pro uživatele nejpřístupnější formou, nemusí nic instalovat, stahovat, pouze otevře prohlížeč s webovou adresou a aplikaci má přístupnou a to jak na počítači, tak i na mobilu. Nevýhoda oproti mobilní aplikace je, že vyžaduje přístup k internetu (ne vždy, viz \ref{sss:pwa}).
 
-\subsubsection{Javascript}
+\subsubsection*{Javascript}
 Pro vývoj webové aplikace lze v Javascriptu zvolit z mnoha možností, ať už co se týče syntaktické nadstavby (Typescript, Flow), nebo knihoven a frameworků. Jelikož jich je velké množství, tak si jen stručně probereme tři nejpopulárnější a to React.JS, Angular a Vue.
 
 React.JS je knihovna vyvýjená společností Facebook, která ho sama využívá pro tvorbu jejich aplikací jako je třeba Instagram, nebo WhatsApp. Jeho hlavní výhodou je možnost si spoustu věcí přizpůsobit k vlastní potřebě (např. routing, globalní uložiště dat, \ldots{}), což mimo jiné vede k menší velikosti výsledné aplikace a vyšší rychlosti. React sám o sobě není ani závislý na prohlížeči a může být využit např. pro vývoj aplikace spouštěné z příkazové řádky.
@@ -38,25 +38,25 @@ Angular je framework od společnosti Google, taktéž využívaný v řadě apli
 
 Vue je knihovna velmi podobná Reactu, sdílí spolu velkou část přístupů, ale Vue se zaměřuje na projekty malé až střední a React in na ty velké. Výhoda tedy je rychlost a jednoduchost, nevýhoda je, že ve velkém projektu se programátor, nebo tým programátorů může rychle začít ztrácet a zpomalí se vývoj.
 
-\subsubsection{C\# }
+\subsubsection*{C\# }
 V C\# se dá vyvýjet i frontend a to za pomoci frameworku ASP.NET, který závisí na frameworku .NET. V dnešní době se na nové projekty již příliž nevyužívá. Lze jej využít v kombinaci s Javascriptem a jeho knihovnami. Největší výhoda tohoto přístupu je striktní dodržení přístupu Model-View-Controler, nevýhodou jsou vyšší nároky na znalost obou technologií, což pro juniorního programátora může být problém.
 
 \subsection{Mobil}
 \label{ss:mobile}
 Mobilním technologiím se budeme v této práci zabývat jen okrajově, protože cílem práce je webová aplikace. Přesto je jistá možnost jak z webové aplikace vytvořit aplikaci mobilní nebo z nějaké části sdílet kód mezi webovou a mobilní aplikací.
 
-\subsubsection{Responzivní webová aplikace}
+\subsubsection*{Responzivní webová aplikace}
 \label{sss:responsive_web_app}
 První a nejjednodušší možností jak vytvořit mobilní aplikaci je pouze optimalizovat aplikaci webovou tak, aby se dala prohlížet i na mobilu. Hlavní výhodou je nízká náročnost vývoje takové aplikace (v porovnání s tvorbou celé mobilní aplikace), nevýhodou však je, že aplikace nemá přístup k některým částem zařízení, třeba stavu baterie, gyroskopu, poloze a dalším.
 
-\subsubsection{Progressive Web App}
+\subsubsection*{Progressive Web App}
 \label{sss:pwa}
 Progressive Web App, nebo Progresivní Webová Aplikace, je způsob jak z mobilní aplikace udělat aplikaci mobilní bez nutnosti vytvářet přímo aplikaci webovou. Tento způsob je kombinací \ref{sss:responsive_web_app}, manifestu a service workeru. Manifest je soubor udávající informace pro mobilní prohlížeč, jak se aplikace má jmenovat, popis, ikony, barevné schéma, autor atd. Jedná se o obdobu manifestu přímo mobilní aplikace. Service worker je specialní skript, který běží na pozadí a umožňuje načítat data, přistupovat k notifikacím nebo poloze (na mobilu i webu) atd. V případě, že webová aplikace splňuje všechny zmíněné náležitosti, pak když uživatel vstoupí na web pomocí jednoho z prohlížečů, které podporují \hyperref[PWA]{sss:pwa}, pak má možnost si tu aplikaci přidat na plochu mobilu a spouštět stejně jako nainstalovanou aplikaci. Takto nainstalovaná aplikace funguje i bez přístupu k internetu, ale je to v podstatě stažený web spustěný v prohlížeči. Hlavní nevýhodou je absence možnosti práce přímo s hardwarem telefonu, takže to není vhodné např. pro mobilní hry. Dalším problémem je podpora na zařízeních s OS iOS, ačkoliv Apple je původním tvůrcem této myšlenky \cite{ritchie_2018_app}, tak aplikace na iOS nemají přístup k tolika informacím a možnostem jako ty na Androidu.
 
-\subsubsection{Hybridní aplikace}
+\subsubsection*{Hybridní aplikace}
 Hybridní aplikace jsou posledním mezikrokem mezi mobilní a webovou aplikací. Jedná se o aplikaci webovou, která je později zkompilovaná i s jádrem prohlížeče a může být přidaná na Android Play Store, resp. iOS App Store. Takto vytvořená aplikace má již přístup ke všem částem telefonu, stejně jako aplikace nativní, ale nevýhoda je velikost balíčku potažmo aplikace, která obsahuje v sobě i část prohlížeče a aplikace má vyšší nároky na RAM telefonu.
 
-\subsubsection{Nativní aplikace}
+\subsubsection*{Nativní aplikace}
 Poslední kategorie jsou aplikace nativní, tedy přímo určené pouze na mobilní zařízení. Existuje mnoho programovacích jazyků, které lze při vývoji použít, ať už to je Java nebo Kotlin pro Android nebo Objective C a Swift pro iOS. Jejich nevýhoda je, že když programátor chce vytvořit mobilní aplikaci, tak musí vytvořit dvě oddělené aplikace, pro každou platformu zvlášť (V případě že chce podporovat pouze Android a iOS). Z toho důvodu exitují různé frameworky, zde si zmíníme pouze jeden a to React Native.
 
 Jedná se o framework syntaxem velmi podobný frameworku ReactJS a důvod proč zmínit zrovna tento a ne ostatní, je možnost přepoužití kódu z webové aplikace. Jisté části aplikace napsané v ReactJS lze bez úpravy použít i v React Native a obráceně. Tedy aplikace psaná za použití React Native má stejné benefity jako aplikace nativní, ale zároveň v ní lze přepoužít části aplikace webové. Příklad takového přepoužití zde \cite{sepulveda_2017_share}.

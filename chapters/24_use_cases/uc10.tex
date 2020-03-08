@@ -3,12 +3,12 @@
 
     \begin{scenario}{HS: Zobrazení formuláře}{uc10:hs}
         \item Scénář začne po zobrazení komponenty.
-        \item Aplikace zobrazí uživateli formulář pro vyplnění následujících hodnot: \uv{Přihlašovací jméno}, \uv{email}, \uv{heslo}, \uv{opakování hesla}.
-        \item Aplikace zobrazí tlačítko \uv{Registrovat}
+        \item Aplikace zobrazí uživateli formulář pro vyplnění následujících hodnot: \enquote{Přihlašovací jméno}, \enquote{email}, \enquote{heslo}, \enquote{opakování hesla}.
+        \item Aplikace zobrazí tlačítko \enquote{Registrovat}
     \end{scenario}
 
     \begin{scenario}{AS01: Registrace}{uc10:as01}
-        \item Scénář začne po stisknutí tlačítka \uv{Registrovat}.
+        \item Scénář začne po stisknutí tlačítka \enquote{Registrovat}.
         \item Aplikace provede kontrolu dle \nameref{uc10:alg1}.
         \begin{itemize}
             \item Pokud algoritmus vrátí chybu, pak je zobrazena a scénář končí.
@@ -17,9 +17,9 @@
     \end{scenario}
     
     \begin{scenario}{Alg.1}{uc10:alg1}
-        \item Pokud hodnota v poli \uv{Přihlašovací jméno} je kratší než 6 znaků, pak algoritmus vrátí chybu.
-        \item Pokud hodnota v poli \uv{email} není platný email, pak algoritmus vrátí chybu.
-        \item Pokud hodnota v poli \uv{heslo} je kratší než 5 znaků, pak algoritmus vrátí chybu.
-        \item Pokud hodnota v poli \uv{opakování hesla} neodpovídá hodnotě v poli \uv{heslo}, pak algoritmus vrátí chybu.
+        \item Pokud hodnota v poli \enquote{Přihlašovací jméno} je kratší než 6 znaků, pak algoritmus vrátí chybu.
+        \item Pokud hodnota v poli \enquote{email} není platný email, pak algoritmus vrátí chybu.
+        \item Pokud hodnota v poli \enquote{heslo} je kratší než 5 znaků, pak algoritmus vrátí chybu.
+        \item Pokud hodnota v poli \enquote{opakování hesla} neodpovídá hodnotě v poli \enquote{heslo}, pak algoritmus vrátí chybu.
     \end{scenario}
 \end{usecase}

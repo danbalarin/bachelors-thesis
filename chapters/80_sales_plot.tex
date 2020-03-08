@@ -1,0 +1,30 @@
+\pgfplotstableread[row sep=\\,col sep=&]{
+    year    & sold \\
+    2009    & 33 \\
+    2010    & 41.8 \\
+    2011    & 62.65 \\
+    2012    & 77.18 \\
+    2013    & 69.58 \\
+    2014    & 73.73 \\
+    2015    & 89.78 \\
+    2016    & 102.2 \\
+    2017    & 119 \\
+    2018    & 123.55 \\
+    }\mydata
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[
+                ybar,
+                symbolic x coords={2009,2010,2011,2012,2013,2014,2015,2016,2017,2018},
+                xtick=data,
+                width=\textwidth,
+                nodes near coords,
+                nodes near coords align={vertical},
+                ylabel={Prodáno v tisících},
+            ]
+            \addplot table[x=year,y=sold]{\mydata};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Prodeje ukulele v USA}
+    \label{plot:ukulele_sales}
+\end{figure}
