@@ -18,5 +18,7 @@
 *.glg
 *.gls*
 *.lot
+*.bcf
+*.xml
 __latex*
 !*assets/*.pdf

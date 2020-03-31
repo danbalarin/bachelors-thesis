@@ -1,19 +1,24 @@
-% arara: xelatex
+% arara: xelatex: { shell: yes }
 % arara: makeglossaries
-% arara: bibtex
-% arara: xelatex
-% arara: xelatex
+% arara: biber
+% arara: xelatex: { shell: yes }
+% arara: xelatex: { shell: yes }
 
 \documentclass[thesis=B,czech]{template/FITthesis}[2019/03/06]
 \selectlanguage{czech}
 
+\usepackage[style=iso-numeric]{biblatex}
 \usepackage[utf8]{inputenc}
 
 \usepackage{dirtree}
+% \usepackage{minted}
 
 \usepackage{csquotes}
 \usepackage{xevlna}
 \usepackage{pgfplots}
+
+\bibliography{bybliography}
+
 
 % % list of acronyms
 \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
@@ -45,7 +50,11 @@
         description={Zbůsob brnkání na struny}
 }
 
-\newacronym{gcd}{GCD}{Greatest Common Divisor}
+\newacronym{npm}{npm}{Node Package Manager}
+\newacronym{pnp}{PnP}{Plug'n Play}
+\newacronym{nra}{NRA}{Node Resolution Algorithm}
+\newacronym{api}{API}{Application Programming Interface}
+\newacronym{rest}{REST}{Representational state transfer}
 
 \newcommand{\smallindentsize}{1cm}
 
@@ -99,8 +108,7 @@
 
 \input{chapters/90_conclusion.tex}
 
-\bibliographystyle{csn690}
-\bibliography{bybliography}
+\printbibliography[title={Literatura}]
 
 \appendix
 

@@ -10,12 +10,12 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
 
-      - name: Compile XeLaTeX document
-        uses: xu-cheng/latex-action@master
-        with:
-          root_file: thesis.tex
-          args: -pdf -xelatex -file-line-error -interaction=nonstopmode
-      
+      - name: Set up enviroment
+        run: sudo apt-get install texlive texlive-lang-czechslovak texlive-xetex texlive-extra-utils texlive-bibtex-extra biber python-pygments
+
+      - name: Run Arara
+        run: arara thesis
+
       - name: Cat log
         if: failure()
         run: cat thesis.log && ls -la
