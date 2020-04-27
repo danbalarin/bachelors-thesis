@@ -1,13 +1,13 @@
 \begin{usecase}{PU08 Správa uživatelských rolí}{uc08}
-    Případ užití umožní uživateli vyhledávat uživatele a měnit jejich role.
+    Případ užití umožní administrátorovi vyhledávat uživatele a měnit jejich role.
 
     \begin{scenario}{HS: Zobrazení vyhledávání}{uc08:hs}
-        \item Scénář začne když uživatel zobrazí tuto komponentu.
+        \item Scénář začne když administrátor zobrazí tuto komponentu.
         \item Aplikace zobrazí pole které reaguje na vstup a vyhledává uživatele v tabulce výsledků.
     \end{scenario}
 
     \begin{scenario}{AS01: Úprava rolí}{uc08:as01}
-        \item Scénář začne, když uživatel změní nějakému uživateli roli.
+        \item Scénář začne, když administrátor změní nějakému uživateli roli.
         \item Aplikace umožní upravit roli jednoho či více uživatelů najednou.
         \item Aplikace zobrazí tlačítko sloužící k uložení informací \enquote{Save}.
         \item Po kliknutí na tlačítko \enquote{Save} aplikace provede uložení hodnot do databáze a pokračuje \hyperref[uc02:as02]{AS02}.

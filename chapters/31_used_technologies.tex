@@ -1,43 +1,40 @@
 \section{Použité technologie}
 \label{sc:used_techologies}
-Vývoj webových aplikací v dnešní době je v rozkvětu, komunita se stále zvětšuje a velké technologické firmy přesouvají desktopové aplikace na web (např. Skype, nebo Outlook).
+%Vývoj webových aplikací v dnešní době je v rozkvětu, komunita se stále zvětšuje a velké technologické firmy přesouvají desktopové aplikace na web (např. Skype, nebo Outlook).
 
-Pro vývoj samotné aplikace využijeme Typescript, pro frontend framework React v kombinaci s Apollo Client a pro backend Node.JS, a konkrétně knihovnu Express a Apollo Server a pro komunikaci GraphQL. K vývoji však patří ještě další podpůrné nástroje, které budeme probírat v nasledujících sekcích, stejně jako podrobnější popis již zmíněné technologie.
+Pro vývoj samotné aplikace byl využit Typescript, pro frontend framework React v kombinaci s Apollo Client a pro backend Node.JS, konkrétně knihovnu Express a Apollo Server a pro komunikaci GraphQL. K vývoji však patří ještě další podpůrné nástroje, kterými se zabývají nasledující sekce, stejně jako podrobnějšímu popisu již zmíněných technologií.
 
 \subsection{GraphQL}
 \label{ss:graphql}
-GraphQL, kde \emph{QL} je zkratka pro Query Language, je dotazovací jazyk. Jedná se o jazyk vyvíjený přímo pro použití v \acrshort{api}, původně vyvíjený firmou \emph{Facebook}, dnes již pod neziskovou organizací \emph{GraphQL Foundation}. Na rozdíl od standardního \acrshort{rest} API, které umožňuje získání, nebo úpravu jednoho objektu pomocí specifické cesty, tak GraphQL server naslouchá jedné cestě a jako parametr dostává stromovou strukturu zapsanou ve speciálním formátu. Tento přístup má mnoho výhod, umožňuje uživateli vybrat si přímo jaká data požaduje (a tím snížit datový tok), slučování více požadavků do jednoho a silné typování samotného API endpointu. Nevýhoda oproti REST API, je využití jedné cesty a tím nemožnost cachování na straně prohlížeče a celková komplexita systému.
+GraphQL, kde \emph{QL} je zkratka pro Query Language, je dotazovací jazyk. Jedná se o jazyk vyvíjený přímo pro použití v \acrshort{api}, původně vyvíjený firmou \emph{Facebook}, dnes již pod neziskovou organizací \emph{GraphQL Foundation}. Na rozdíl od standardního \acrshort{rest} API, které umožňuje získání, nebo úpravu jednoho objektu pomocí specifické cesty, tak GraphQL server naslouchá jedné cestě a jako parametr dostává stromovou strukturu zapsanou ve speciálním formátu. Tento přístup má mnoho výhod, umožňuje uživateli vybrat si přímo jaká data požaduje (a tím snížit datový tok), také umožňuje slučování více požadavků do jednoho a silné typování samotného \acrshort{api} endpointu. Nevýhoda oproti REST \acrshort{api}, je využití jedné cesty a tím znemožnění cachování na straně prohlížeče a celková komplexita systému.
 
 \subsection{Yarn v2}
 \label{ss:yarn}
 Yarn je alternativa k \acrshort{npm}, což je balíčkovací systém pro Javascript, obdoba NuGetu pro C\# nebo Mavenu pro Javu. Od verze 2.0, taky zvané \emph{berry}, integruje podporu tzv. monorepa, tedy přístupu kdy jeden repozitář obsahuje několik podprojektů. Tuto možnost dříve poskytoval nástroj \href{https://github.com/lerna/lerna}{\emph{lerna}}. To vede k možnosti modularizace aplikace a zavedení Single responsibility principu.
 
-Další podstatná funkcionalita Yarn v2 je vynucená podpora \acrfull{pnp} režimu. \acrshort{pnp} je přístup zavedený týmem hlavních vývojářů Yarnu, jde o to, že při standartní instalaci balíčků pomocí npm nebo yarn bez pnp, jsou balíčky staženy a rozbaleny do adresáře \emph{node\_modules} ze kterého potom čerpá \acrfull{nra} \cite{joyentinc_1_noderesolutionalgorithm}. Tento algoritmus při sestavování výsledné aplikace pro každé volání funkce \emph{require()} vždy projde složku \emph{node\_modules} a pokud daný balíček nenajde, pak rekurzivně pokračuje v nadřazeném adresáři (za předpokladu, že nadřazený adresář obsahuje složku \emph{node\_modules}). Tento přístup je i s nějakými optimalizacemi velmi pomalý. Yarn s \acrshort{pnp} provádí to, že při prvotní instalaci závislostí místo vytvoření \emph{node\_modules} složky, kam by se následně rozbalovaly balíčky, tak vytvoří vlastní adresář \emph{.yarn/cache} kam stáhne balíčky, nerozbaluje je a následně vytvoří soubor \emph{pnp.js} který uchovává odkazy na všechny balíčky a závislosti. Výhodou je až o 70\% vyšší rychlost a menší zatížení disku a procesoru při instalaci. Nevýhodou je, že všechny instalované balíčky musí mít explicitní výpis všech svých závislostí, což velká část do dnešní doby nemá a spoléhá na to, že jejich závislosti prostě budou k dispozici a \acrshort{nra} je najde.
+Další podstatná funkcionalita Yarn v2 je vynucená podpora \acrfull{pnp} režimu. \acrshort{pnp} je přístup zavedený týmem hlavních vývojářů Yarnu. Při standartní instalaci balíčků pomocí npm nebo yarn bez pnp, jsou balíčky staženy a rozbaleny do adresáře \emph{node\_modules} ze kterého potom čerpá \acrfull{nra}~\cite{joyentinc_1_noderesolutionalgorithm}. Tento algoritmus při sestavování výsledné aplikace pro každé volání funkce \emph{require()} vždy projde složku \emph{node\_modules} a pokud daný balíček nenajde, pak rekurzivně pokračuje v nadřazeném adresáři (za předpokladu, že nadřazený adresář obsahuje složku \emph{node\_modules}). Tento přístup je i s nějakými optimalizacemi velmi pomalý. Yarn s \acrshort{pnp} provádí to, že při prvotní instalaci závislostí místo vytvoření \emph{node\_modules} složky, kam by se následně rozbalovaly balíčky, tak vytvoří vlastní adresář \emph{.yarn/cache} kam stáhne balíčky, nerozbaluje je a následně vytvoří soubor \emph{pnp.js} který uchovává odkazy na všechny balíčky a závislosti. Výhodou je až o 70\% vyšší rychlost a menší zatížení disku a procesoru při instalaci. Nevýhodou je, že všechny instalované balíčky musí mít explicitní výpis všech svých závislostí, což velká část do dnešní doby nemá a spoléhá na to, že jejich závislosti prostě budou k dispozici a \acrshort{nra} je najde.
 
-Jelikož Yarn v2 ještě nevyšel jako stabilní verze, nýbrž pouze jeho release kandidáti, tak se k němu špatně hledají informace v případě potíží. Další problém který tento přístup přinesl do práce byla nutnost opravy chybějících závislostí některých balíčků. Jak již bylo zmíněno, každý balíček musí mít seznam svých závislostí a když nemá, tak sestavení selže. Takže je na každém uživateli aby tyto závislosti doplnil a to formou zápisu do konfiguračního \emph{.yarnrc.yml} souboru, kde je v práci takto opraveno zhruba 30 závislostí. Výhodou pak je mnohem rychlejší instalace závislostí, sestavení aplikace a podpora monorepa.
+Jelikož Yarn v2 ještě nevyšel jako stabilní verze, nýbrž pouze jeho release kandidáti, tak se k němu špatně hledají informace v případě potíží. Další problém který tento přístup přinesl do práce byla nutnost opravy chybějících závislostí některých balíčků. Jak již bylo zmíněno, každý balíček musí mít seznam svých závislostí a když nemá, tak sestavení selže. Takže je na každém vývojáři, aby tyto závislosti doplnil a to formou zápisu do konfiguračního \emph{.yarnrc.yml} souboru, kde je v práci takto opraveno zhruba 30 závislostí. Výhodou pak je mnohem rychlejší instalace závislostí, sestavení aplikace a podpora monorepa.
 
 \subsection{Express}
 \label{ss:express}
-Express je minimalistický webový framework pro Node.js. Jedná se o jednoduchý webový server, který dokáže obsluhovat standardní http požadavky. Umožňuje, mimo jiné, i jednotlivým cestám nastavit middleware, což jsou funkce které jsou spuštěny před samotným vyhodnocováním funkce k dané cestě. Typickým využitím je autentizace uživatele, nebo zapisování do log souboru.
+Express je minimalistický webový framework pro Node.js. Jedná se o jednoduchý webový server, který dokáže obsluhovat standardní http požadavky. Umožňuje, mimo jiné, jednotlivým cestám nastavit middleware, což jsou funkce které jsou spuštěny před samotným vyhodnocováním funkce k dané cestě. Typickým využitím je autentizace uživatele, nebo zapisování do log souboru. V rámci aplikace byl použit jak pro poskytování backend, tak i frontend serveru. Backend server poskytuje GraphQL \acrshort{api} a zajišťuje napojení na databázi, zatím co frontend server poskytuje \acrfull{ssr} aplikace. Co znamená \acrfull{ssr} se budeme podrobněji zabývat v rámci samostatné sekce \ref{ss:ssr}.
 
 \subsection{Apollo Server}
 \label{ss:apollo_server}
-Apollo server je GraphQL server vyvíjený společností \emph{Meteor Development Group, Inc.}, který je nezávislý na volbě webového serveru, v našem případě \ref{ss:express}, který je takzvaně \emph{unopinionated}, což znamená, že vývojáře netlačí nějakou specifickou cestou vývoje.
+Apollo Server je GraphQL server vyvíjený společností \emph{Meteor Development Group, Inc.}, který je nezávislý na volbě webového serveru, v našem případě \ref{ss:express}, který je takzvaně \emph{unopinionated}, což znamená, že vývojáře netlačí nějakou specifickou cestou vývoje. Jeho hlavní výhodou je hlavně jednoduchost, ale i popularita, tedy větší komunita. Menším detailem, který potěší hlavně vývojáře, je automatické vystavování GraphQL Playground, což je webová aplikace umožňující simulování dotazů, které ma funkce jako IDE, tedy našeptávání, kontrola typů, kontrola syntaxe, \ldots{}.
+
+\subsection{Apollo Client}
+\label{ss:apollo_client}
+Apollo Client je od stejné společnosti jako \ref{ss:apollo_server} a tyto dvě knihovny nejlépe fungují právě, když jsou pohromadě. Mezi hlavní výhody Apollo Client patří snadné cachování, velké množství dalších balíčků od komunity, nebo správa lokálního stavu aplikace kterému se budeme věnovat podrobněji v sekci \ref{ss:local_state_management}.
 
 \subsection{React}
 \label{ss:react}
+Konečná volba padla na React hlavně z důvodu největší popularity a tedy i největší podpory ze strany komunity. V rámci této práce je již zakomponováno několik technologíí, které nejsou zatím se stabilním stavu a je tedy mít nějaký styčný bod, na který je možný plně spoléhat. I z toho důvodu byla použita stabilní verze Reactu a ne \emph{nightly} nebo \emph{experimentální}, které sice poskytují některé pěkné funkcionality, např. \emph{Concurrent Mode} zrychlující render aplikace nebo \emph{Suspense} zjednodušující čekání na asynchronní úkoly, ale výsledná aplikace by byla nestabilní, což by pro vývoj znamenalo značné zdržení.
 
-\subsection{Apollo client}
-\label{ss:apollo_client}
 
 \subsection{Storybook.js}
 \label{ss:storybook}
-
-\subsection{Chakra UI}
-\label{ss:chakra_ui}
-
-\subsection{Styled components}
-\label{ss:express}
 
 \subsection{Jest}
 \label{ss:jest}
