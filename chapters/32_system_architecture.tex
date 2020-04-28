@@ -1,6 +1,6 @@
 \section{Architektura systému}
 \label{sc:system_architecture}
-Jak již bylo zmíněno v nefunčních požadavcích, aplikace má být lehce rozšiřitelná. Tomuto požadavku se dá vyhovět několika způsoby, avšak ideologii Javascriptu se nejvíce blíží je modularizace. A pro zjednodušení vývoje a testování samotných modulů, tak se jednotlivé moduly řídí metodikou \emph{Clean Architecture}.
+Jak již bylo zmíněno v nefunčních požadavcích, aplikace má být lehce rozšiřitelná. Tomuto požadavku se dá vyhovět několika způsoby, avšak ideologii Javascriptu se nejvíce blíží je modularizace \cite{bevacqua_2018_mastering}. A pro lepší přehlednost kódu a zjednodušení testování samotných modulů, se jednotlivé moduly řídí metodikou \nameref{ss:clean_architecture}.
 
 \subsection{Modularizace}
 Aplikace byla modularizována tak, že nejprve byla rozdělena na jednotlivé domény. Příkladem takové domény může být správa uživatelů nebo výuka. Následně tyto domény byly rozděleny na tři části, backend, frontend a společné.
@@ -15,25 +15,26 @@ Jednotlivé balíčky ovšem netvoří výslednou aplikaci, proto je potřeba m�
 
 
 \begin{figure}
-  \dirtree{%
-    .1 root projektu.
-    .2 modules\DTcomment{Adresář s moduly}.
-    .3 look\DTcomment{Modul udávající vzhled aplikace}.
-    .4 react.
-    .3 ukulele\DTcomment{Modul obsahující doménu hry na ukulele}.
-    .4 common.
-    .4 nodejs.
-    .4 react.
-    .3 \ldots .
-    .2 packages.
-    .3 nodejs\DTcomment{Sestavuje backend server}.
-    .3 react\DTcomment{Sestavuje frontend server}.
-  }
-  \caption{Zjednodušená adresářová struktura}
-  \label{fig:modules}
+    \dirtree{%
+        .1 root projektu.
+        .2 modules\DTcomment{Adresář s moduly}.
+        .3 look\DTcomment{Modul udávající vzhled aplikace}.
+        .4 react.
+        .3 ukulele\DTcomment{Modul obsahující doménu hry na ukulele}.
+        .4 common.
+        .4 nodejs.
+        .4 react.
+        .3 \ldots .
+        .2 packages.
+        .3 nodejs\DTcomment{Sestavuje backend server}.
+        .3 react\DTcomment{Sestavuje frontend server}.
+    }
+    \caption{Zjednodušená adresářová struktura}
+    \label{fig:modules}
 \end{figure}
 
 \subsection{Clean Architecture}
+\label{ss:clean_architecture}
 Tato metodika, prezentovaná ve stejnojmené knize od R. C. Martina~\cite{martin_2018_clean}, popisuje jak rozdělit aplikaci na jednotlivé vrstvy. Říká, že aplikace by měla být rozdělena na \emph{entity}, \emph{use case}, \emph{presenters, controllers} a \emph{frameworks, drivers}, znázorňující obrázek \ref{fig:clean_architecture}.
 Entity definují základní byznys pravidla dané domény a jejich reprezentace může být například sada funkcí, nebo objekt s metodami nebo bez. V rámci této práce jsou entity reprezentovány pomocí objektů bez metod, přesněji Typescript interfaces, a to hlavně z důvodu snadné serializace a deserializace.
 Vrstva use case provadí operace specifické pro aplikaci nad danými entitami. V případě této práce to jsou \emph{intereactory}, třídy které manipulují s entitami.
@@ -42,8 +43,8 @@ Následující vrstva už převádí dané entity na objekty vhodné pro další
 Výhodou tohoto rozdělení je přehlednost a hlavně snadné testování. Při testování dané vrstvy, se vždy přistupuje z vrstvy nadřazené, test tedy simuluje operace které by dělala vrstva nadřazená a mockuje se první podřazená vrstva. Je tedy vždy jasné jak daný test funguje a jaká data testuje. V případe těchto testů mluvíme o testech jednotkových, nikoliv smoke nebo integračních.
 
 \begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{assets/clean_architecture.jpg}
-  \caption{Clean Architecture }
-  \label{fig:clean_architecture}
+    \centering
+    \includegraphics[width=\textwidth]{assets/clean_architecture.jpg}
+    \caption{Clean Architecture }
+    \label{fig:clean_architecture}
 \end{figure}

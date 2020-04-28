@@ -20,5 +20,6 @@
 *.lot
 *.bcf
 *.xml
+_minted*
 __latex*
 !*assets/*.pdf

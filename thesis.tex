@@ -50,53 +50,12 @@
 \newglossaryentry{strumming pattern}
 {
         name={strumming pattern},
-        description={Zbůsob brnkání na struny}
+        description={Způsob brnkání na struny}
 }
 
-\newacronym{npm}{npm}{Node Package Manager}
-\newacronym{pnp}{PnP}{Plug'n Play}
-\newacronym{nra}{NRA}{Node Resolution Algorithm}
-\newacronym{api}{API}{Application Programming Interface}
-\newacronym{seo}{SEO}{Search Engine Optimalization}
-\newacronym{rest}{REST}{Representational state transfer}
-\newacronym{ssr}{SSR}{Server Side Rendering}
-\newacronym{orm}{ORM}{Object Reloation Mapping}
+\input{chapters/99_acronyms.tex}
 
-\newcommand{\smallindentsize}{1cm}
-
-\newenvironment{usecase}[2]{
-    \noindent
-    \paragraph{#1}
-    \label{#2}
-    \begin{smallindent}{}
-}{
-    \end{smallindent}
-}
-
-\newenvironment{scenario}[2]{
-    \paragraph{#1}
-    \label{#2}
-    \begin{enumerate}
-}{
-    \end{enumerate}
-}
-
-\newenvironment{requirment}[2]{
-\noindent \begin{minipage}{\textwidth}
-    \paragraph{#1}
-    \label{#2}
-    \begin{smallindent}{}
-}{
-    \end{smallindent}
-\end{minipage}
-}
-
-\newenvironment{smallindent}{%
-    \begin{adjustwidth}{\smallindentsize}%
-}{%
-    \end{adjustwidth}%
-    \bigskip
-}
+\input{template/custom_commands.tex}
 
 \graphicspath{{./assets/use_case_mode.png}}
 

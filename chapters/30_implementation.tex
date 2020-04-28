@@ -10,7 +10,7 @@ V rámci této kapitoly se budeme zabývat konečným výběrem technologií a a
 
 \section{Backend}
 \label{sc:backend}
-Realizace samotného backendu nebyla náročná a to právě díky vhodně zvoleným technologiím. Většina potřeb byla vyřízena pouhým definováním mongoose schémat, ze kterých se následně vytvořili modely a z nich GraphQL schéma. Úprav modelů bylo minimum, jako příklad takové úpravy by mohlo být smazání pole hesla z modelu uživatele při vracení daného modelu. Tato úprava je vidět na ukázce \ref{code:to_json_user}, kde je k metodě \mintinline{typescript}{toJSON}, přidaný transformátor, který vytvoří \emph{UserInteractor} a zavolá \emph{stripUser}. Tato metoda pouze vezme uživatele a odstraní z něj heslo.
+Realizace samotného backendu nebyla náročná a to právě díky vhodně zvoleným technologiím. Většina potřeb byla vyřízena pouhým definováním mongoose schémat, ze kterých se následně vytvořili modely a z nich GraphQL schéma. Úprav modelů bylo minimum, jako příklad takové úpravy by mohlo být smazání pole hesla z modelu uživatele při vracení daného modelu. Tato úprava je vidět na ukázce \ref{code:to_json_user}, kde je k metodě \mintinline{typescript}{toJSON}, přidaný transformátor, který vytvoří \emph{UserInteractor ui} a zavolá \mintinline{typescript}{ui.stripUser()}. Tato metoda pouze pouze vrátí kopii původního uživatele bez hesla.
 
 \begin{figure}[h!]
     \centering
@@ -22,11 +22,11 @@ UserSchema.set('toJSON', {
     },
 });
     \end{minted}
-    \caption{Převod modelu uživatele}
-    \label{code:to_user_model}
+    \caption{Odebrání hesla z modelu uživatele}
+    \label{code:to_json_user}
 \end{figure}
 
-Největší problém bylo provázání modulů, tak aby na sobě byly nezávislé ale zároveň poskytovali všechny funkcionality. Konkrétně se jednalo o modul uživatele a výuky, například kvůli \ref{FP24}, který vyžaduje propojení jednotlivých modulů. Tento
+Největší problém bylo provázání modulů, tak aby na sobě byly nezávislé ale zároveň poskytovali všechny funkcionality. Konkrétně se jednalo o modul uživatele a výuky, například kvůli \ref{FP24}, který vyžaduje propojení jednotlivých modulů. Tento TODO
 
 \section{Frontend}
 \label{sc:frontend}
