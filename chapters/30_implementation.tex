@@ -7,37 +7,7 @@ V rámci této kapitoly se budeme zabývat konečným výběrem technologií a a
 
 \input{chapters/32_system_architecture.tex}
 
+\input{chapters/33_backend.tex}
 
-\section{Backend}
-\label{sc:backend}
-Realizace samotného backendu nebyla náročná a to právě díky vhodně zvoleným technologiím. Většina potřeb byla vyřízena pouhým definováním mongoose schémat, ze kterých se následně vytvořili modely a z nich GraphQL schéma. Úprav modelů bylo minimum, jako příklad takové úpravy by mohlo být smazání pole hesla z modelu uživatele při vracení daného modelu. Tato úprava je vidět na ukázce \ref{code:to_json_user}, kde je k metodě \mintinline{typescript}{toJSON}, přidaný transformátor, který vytvoří \emph{UserInteractor ui} a zavolá \mintinline{typescript}{ui.stripUser()}. Tato metoda pouze pouze vrátí kopii původního uživatele bez hesla.
-
-\begin{figure}[h!]
-    \centering
-    \begin{minted}{javascript}
-UserSchema.set('toJSON', {
-    transform: function(doc: any, ret: any, opt: any) {
-        const ui = new UserInteractor(ret);
-        return ui.stripUser();
-    },
-});
-    \end{minted}
-    \caption{Odebrání hesla z modelu uživatele}
-    \label{code:to_json_user}
-\end{figure}
-
-Největší problém bylo provázání modulů, tak aby na sobě byly nezávislé ale zároveň poskytovali všechny funkcionality. Konkrétně se jednalo o modul uživatele a výuky, například kvůli \ref{FP24}, který vyžaduje propojení jednotlivých modulů. Tento TODO
-
-\section{Frontend}
-\label{sc:frontend}
-
-\subsection{Lokalní správa stavu aplikace}
-\label{ss:local_state_management}
-
-\subsection{SSR}
-\label{ss:ssr}
-
-\subsection{Themes}
-\label{ss:themes}
-
+\input{chapters/34_frontend.tex}
 
