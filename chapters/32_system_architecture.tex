@@ -3,7 +3,14 @@
 Jak již bylo zmíněno v nefunčních požadavcích, aplikace má být lehce rozšiřitelná. Tomuto požadavku se dá vyhovět několika způsoby, avšak ideologii Javascriptu se nejvíce blíží je modularizace \cite{bevacqua_2018_mastering}. A pro lepší přehlednost kódu a zjednodušení testování samotných modulů, se jednotlivé moduly řídí metodikou \nameref{ss:clean_architecture}.
 
 \subsection{Modularizace}
-Aplikace byla modularizována tak, že nejprve byla rozdělena na jednotlivé domény. Příkladem takové domény může být správa uživatelů nebo výuka. Následně tyto domény byly rozděleny na tři části, backend, frontend a společné.
+Aplikace byla modularizována tak, že nejprve byla rozdělena na jednotlivé domény, které je možné vidět na obrázku \ref{fig:class_diagram}. Následně tyto domény byly rozděleny na tři části, backend, frontend a společné.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{assets/class_diagram.png}
+    \caption{Diagram tříd znázorňující dómény}
+    \label{fig:class_diagram}
+\end{figure}
 
 Backend část specifikuje veškerou práci s daty, která se odehrává na serveru, od validace až po vystavování mutací a query pro GraphQL server. Tato část smí být závislá jen na společné části domény a modulu autorizace. Díky tomu se zajistí striktní oddělení domén a zjednodušší testování, jelikož jednotkové testy pak testují jen skutečně jednu funkcionalitu nezávisle na všech ostatních. Každý takovýto balíček exportuje jednu funkci, která jako parametr dostane nastavení a vrací objekt obsahující \emph{seed} pro inicializaci aplikace, mutace a query pro GraphQL server.
 
@@ -47,4 +54,5 @@ Výhodou tohoto rozdělení je přehlednost a hlavně snadné testování. Při 
     \includegraphics[width=\textwidth]{assets/clean_architecture.jpg}
     \caption{Clean Architecture}
     \label{fig:clean_architecture}
+    \textit{Zdroj:}~https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 \end{figure}
