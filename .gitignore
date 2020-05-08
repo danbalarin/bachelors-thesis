@@ -20,6 +20,7 @@
 *.lot
 *.bcf
 *.xml
+*.te~
 _minted*
 __latex*
 !*assets/*.pdf

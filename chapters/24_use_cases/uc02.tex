@@ -2,7 +2,7 @@
     Případ užití umožní uživateli vyhledávat akordy, vybírat zobrazenou podmnožinu, přepínat mezi přednastavenými laděními ukulele (sopranové, baritonové) nebo si nastavit svoje vlastní. Pokud je uživatel přihlášen, pak má možnost si toto nastavení uložit jako svoje výchozí.
 
     \begin{scenario}{HS: Zobrazení akordů}{uc02:hs}
-        \item Scénář začne po přechodu na stránku s akordy.
+        \item Scénář začne po přechodu na stránku s~akordy.
         \item Aplikace zobrazí uživateli vyhledávací pole, které se řídí dle \hyperref[uc02:as01]{AS01}
         % \item Aplikace zobrazí uživateli komponentu nastavování ladění, která se řídí dle \hyperref[uc02:as02]{AS02}
     \end{scenario}
@@ -15,12 +15,12 @@
     \begin{scenario}{AS02: Přechytávání akordů}{uc02:as02}
         \item Scénář začne, když uživatel vybere více než jeden akord.
         \item Aplikace umožní vybrané akordy řadit.
-        \item Aplikace zobrazí uživateli komponentu z \hyperref[uc01]{PU01}.
+        \item Aplikace zobrazí uživateli komponentu z~\hyperref[uc01]{PU01}.
     \end{scenario}
 
     \begin{scenario}{AS03: Přechytávání akordů podle písně}{uc02:as03}
         \item Scénář začne při přechodu ze stránky písně.
-        \item Aplikace nastaví hodnoty podle vstupu z odkazu.
+        \item Aplikace nastaví hodnoty podle vstupu z~odkazu.
         \item Aplikace pokračuje \hyperref[uc02:as02]{AS02}.
     \end{scenario}
 
@@ -30,10 +30,10 @@
     % \end{scenario}
 
     \begin{scenario}{Alg.1}{uc02:alg1}
-        \item Pokud text začíná znakem z množiny [\enquote{a}, \enquote{b}, \enquote{c}, \enquote{d}, \enquote{e}, \enquote{f}, \enquote{g}] pak filtruje výsledky podle daného znaku.
+        \item Pokud text začíná znakem z~množiny [\enquote{a}, \enquote{b}, \enquote{c}, \enquote{d}, \enquote{e}, \enquote{f}, \enquote{g}] pak filtruje výsledky podle daného znaku.
         \item Pokud text obsahuje podřetězec \enquote{maj}, pak vrátí pouze Major akordy.
         \item Pokud text obsahuje podřetězec \enquote{min}, pak vrátí pouze Minor akordy.
-        \item Pokud text obsahuje jeden z podřetězců [\enquote{dom}, \enquote{7}], pak vrátí pouze Dominant akordy.
+        \item Pokud text obsahuje jeden z~podřetězců [\enquote{dom}, \enquote{7}], pak vrátí pouze Dominant akordy.
         \item Vrátí vyfiltrované výsledky.
     \end{scenario}
 \end{usecase}

@@ -3,19 +3,19 @@
 
     \begin{scenario}{HS: Zobrazení profilu}{uc07:hs}
         \item Scénář začne když uživatel zobrazí tuto komponentu.
-        \item Aplikace zobrazí uživatelský profil s předvyplněnými polemi.
+        \item Aplikace zobrazí uživatelský profil s~předvyplněnými polemi.
     \end{scenario}
 
     \begin{scenario}{AS01: Úprava hodnot}{uc07:as01}
-        \item Scénář začne, když uživatel změní hodnotu v některém z polí.
+        \item Scénář začne, když uživatel změní hodnotu v~některém z~polí.
         \item Aplikace umožní upravit hodnoty některých polí.
-        \item Aplikace zobrazí tlačítko sloužící k uložení informací \enquote{Save}.
+        \item Aplikace zobrazí tlačítko sloužící k~uložení informací \enquote{Save}.
         \item Po kliknutí na tlačítko \enquote{Save} aplikace provede validace polí podle \nameref{uc07:alg1}.
         \begin{itemize}
             \item Pokud validace proběhnou úspěšně, pak jsou informace odeslány na server a pokračuje se \hyperref[uc07:as02]{AS02}.
             \item Jinak jsou zobrazeny chybové hlášky podle toho, jaké validace selhaly.
         \end{itemize}
-        \item Pokud chce uživatel opustit stránku před uložením změněných hodnot, tak je o tom informován s možností uložit hodnoty.
+        \item Pokud chce uživatel opustit stránku před uložením změněných hodnot, tak je o~tom informován s~možností uložit hodnoty.
     \end{scenario}
 
     \begin{scenario}{AS02: Přenačtení hodnot}{uc07:as02}
@@ -25,8 +25,8 @@
     \end{scenario}
 
     \begin{scenario}{Alg.1}{uc07:alg1}
-        \item Pokud hodnota v poli \enquote{Email} není platný email, pak algoritmus vrátí chybu.
-        \item Pokud je hodnota v poli \enquote{Heslo} kratší než 5 znaků, pak algoritmus vrátí chybu.
-        \item Pokud hodnota v poli \enquote{Opakování hesla} neodpovídá hodnotě v poli \enquote{heslo}, pak algoritmus vrátí chybu.
+        \item Pokud hodnota v~poli \enquote{Email} není platný email, pak algoritmus vrátí chybu.
+        \item Pokud je hodnota v~poli \enquote{Heslo} kratší než 5 znaků, pak algoritmus vrátí chybu.
+        \item Pokud hodnota v~poli \enquote{Opakování hesla} neodpovídá hodnotě v~poli \enquote{heslo}, pak algoritmus vrátí chybu.
     \end{scenario}
 \end{usecase}
