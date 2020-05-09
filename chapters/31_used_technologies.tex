@@ -1,6 +1,6 @@
 \section{Použité technologie}
 \label{sc:used_techologies}
-Pro vývoj samotné aplikace byl využit Typescript, pro frontend framework React v~kombinaci s~Apollo Client a pro backend Node.JS, konkrétně knihovnu Express a Apollo Server a pro komunikaci GraphQL. K~vývoji však patří ještě další podpůrné nástroje, kterými se zabývají nasledující sekce, stejně jako podrobnějšímu popisu již zmíněných technologií.
+Pro vývoj samotné aplikace byl využit Typescript, pro frontend framework React v~kombinaci s~Apollo Client a pro backend Node.JS, konkrétně knihovnu Express a Apollo Server a pro komunikaci GraphQL. K~vývoji však patří ještě další podpůrné nástroje, kterými se zabývají následující sekce, stejně jako podrobnějšímu popisu již zmíněných technologií.
 
 \subsection{GraphQL}
 \label{ss:graphql}
@@ -12,15 +12,15 @@ Ve spojitosti s~GraphQL se budeme bavit o~požadavcích typu \uv{query} a \uv{mu
 \label{ss:mongoose}
 MongoDB je NoSQL databáze. Hlavní výhoda NoSQL databází je rychlejší vývoj a prototypování, jelikož se nemusí žádným způsobem vytvářet tabulky. Výhodou MongoDB je přístup k~ukládání dat, a to ve formě dokumentů, kde každý dokument je tvořen z~dvojic klíče a hodnoty. Takovýto dokument je až na typy shodný s~JSON, tedy propojení MongoDB a Javascriptové aplikace je triviální.
 
-Mongoose je tzv. \acrfull{orm} nástroj vytvořený firmou \emph{Automattic} přímo pro databázi MongoDB. To umožňuje vytvořit jednotlivé datové modely ze schémat. Schéma je objekt definujicí vlastnosti modelu, jako jsou pole, indexy, validace, virtuální pole a další \cite{automatticinc_2020_mongoose}. Takto vytvořený model poskytuje možnost vytvářet, vyhledávat, upravovat či mazat záznamy v~databázi.
+Mongoose je tzv. \acrfull{orm} nástroj vytvořený firmou \emph{Automattic} přímo pro databázi MongoDB. To umožňuje vytvořit jednotlivé datové modely ze schémat. Schéma je objekt definující vlastnosti modelu, jako jsou pole, indexy, validace, virtuální pole a další \cite{automatticinc_2020_mongoose}. Takto vytvořený model poskytuje možnost vytvářet, vyhledávat, upravovat či mazat záznamy v~databázi.
 
-Další a nejvetší výhodou tohoto přístupu vytváření modelů je možnost z~takových modelů automaticky vytvořit GraphQL mutace a query a to za použití knihoven \emph{graphql-compose} a \emph{graphql-compose-mongoose}. Tyto knihovny vytvoří základní query a mutace pro vyhledávání či úpravu modelů, které jsou snadno rozšiřitelné o~další, vlastní, operace nad modely.
+Další a největší výhodou tohoto přístupu vytváření modelů je možnost z~takových modelů automaticky vytvořit GraphQL mutace a query a to za použití knihoven \emph{graphql-compose} a \emph{graphql-compose-mongoose}. Tyto knihovny vytvoří základní query a mutace pro vyhledávání či úpravu modelů, které jsou snadno rozšiřitelné o~další, vlastní, operace nad modely.
 
 \subsection{Yarn v2}
 \label{ss:yarn}
 Yarn je alternativa k~\acrshort{npm}, což je balíčkovací systém pro Javascript, obdoba NuGetu pro C\# nebo Mavenu pro Javu.
 
-Od verze 2.0, taky zvané \emph{berry}, integruje podporu tzv. monorepozitáře, tedy přístupu kdy jeden repozitář obsahuje několik podprojektů. Tuto možnost poskytuje i nástroj \href{https://github.com/lerna/lerna}{\emph{lerna}}, kde se vývojáři \nameref{ss:yarn} inspirovali. To vede k~možnosti modularizace aplikace a zavedení Single responsibility principu.
+Od verze 2.0, taky zvané \emph{berry}, integruje podporu tzv. monorepozitáře, tedy přístupu kdy jeden repozitář obsahuje několik podprojektů. Tuto možnost poskytuje i nástroj \href{https://github.com/lerna/lerna}{\emph{lerna}}, kde se vývojáři~\nameref{ss:yarn} inspirovali. To vede k~možnosti modularizace aplikace a zavedení Single responsibility principu.
 
 Další podstatná funkcionalita Yarn v2 je vynucená podpora \acrfull{pnp} režimu. \acrshort{pnp} je přístup zavedený týmem hlavních vývojářů Yarnu. Při standartní instalaci balíčků pomocí npm nebo yarn bez pnp, jsou balíčky staženy a rozbaleny do adresáře \emph{node\_modules} ze kterého potom čerpá \acrfull{nra}~\cite{joyentinc_1_noderesolutionalgorithm}. Tento algoritmus při sestavování výsledné aplikace pro každé volání funkce \emph{require()} vždy projde složku \emph{node\_modules} a pokud daný balíček nenajde, pak rekurzivně pokračuje v~nadřazeném adresáři (za předpokladu, že nadřazený adresář obsahuje složku \emph{node\_modules}). Tento přístup je i s~nějakými optimalizacemi velmi pomalý. Yarn s~\acrshort{pnp} provádí to, že při prvotní instalaci závislostí místo vytvoření \emph{node\_modules} složky, kam by se následně rozbalovaly balíčky, tak vytvoří vlastní adresář \emph{.yarn/cache} kam stáhne balíčky, nerozbaluje je a následně vytvoří soubor \emph{pnp.js} který uchovává odkazy na všechny balíčky a závislosti. Výhodou je až o~70\% vyšší rychlost a menší zatížení disku a procesoru při instalaci. Nevýhodou je, že všechny instalované balíčky musí mít explicitní výpis všech svých závislostí, což velká část do dnešní doby nemá a spoléhá na to, že jejich závislosti prostě budou k~dispozici a \acrshort{nra} je najde.
 
@@ -28,19 +28,19 @@ Jelikož Yarn v2 ještě nevyšel jako stabilní verze, nýbrž pouze jeho relea
 
 \subsection{Express}
 \label{ss:express}
-Express je minimalistický webový framework pro Node.js. Jedná se o~jednoduchý webový server, který dokáže obsluhovat standardní http požadavky. Umožňuje, mimo jiné, jednotlivým cestám nastavit middleware, což jsou funkce které jsou spuštěny před samotným vyhodnocováním funkce k~dané cestě. Typickým využitím je autentizace uživatele, nebo zapisování do log souboru. V~rámci aplikace byl použit jak pro poskytování backend, tak i frontend serveru. Backend server poskytuje GraphQL \acrshort{api} a zajišťuje napojení na databázi, zatím co frontend server poskytuje \acrfull{ssr} aplikace. Co znamená \acrfull{ssr} se budeme podrobněji zabývat v~rámci samostatné sekce \ref{ss:ssr}.
+Express je minimalistický webový framework pro Node.js. Jedná se o~jednoduchý webový server, který dokáže obsluhovat standardní http požadavky. Umožňuje, mimo jiné, jednotlivým cestám nastavit middleware, což jsou funkce, které jsou spuštěny před samotným vyhodnocováním funkce k~dané cestě. Typickým využitím je autentizace uživatele, nebo zapisování do log souboru. V~rámci aplikace byl použit jak pro poskytování backend, tak i frontend serveru. Backend server poskytuje GraphQL \acrshort{api} a zajišťuje napojení na databázi, zatím co frontend server poskytuje \acrfull{ssr} aplikace. Co znamená \acrshort{ssr} se budeme podrobněji zabývat v~rámci samostatné sekce~\ref{ss:ssr}.
 
 \subsection{Apollo Server}
 \label{ss:apollo_server}
-Apollo Server je GraphQL server vyvíjený společností \emph{Meteor Development Group, Inc.}, který je nezávislý na volbě webového serveru, v~našem případě \ref{ss:express}, který je takzvaně \emph{unopinionated}, což znamená, že vývojáře netlačí nějakou specifickou cestou vývoje. Jeho hlavní výhodou je hlavně jednoduchost, ale i popularita, tedy větší komunita. Menším detailem, který potěší hlavně vývojáře, je automatické vystavování GraphQL Playground, což je webová aplikace umožňující simulování dotazů, které ma funkce jako IDE, tedy našeptávání, kontrola typů, kontrola syntaxe, \ldots{}.
+Apollo Server je GraphQL server vyvíjený společností \emph{Meteor Development Group, Inc.}, který je nezávislý na volbě webového serveru, v~našem případě~\ref{ss:express}, který je takzvaně \emph{unopinionated}, což znamená, že vývojáře netlačí nějakou specifickou cestou vývoje. Jeho hlavní výhodou je hlavně jednoduchost, ale i popularita, tedy větší komunita. Menším detailem, který potěší hlavně vývojáře, je automatické vystavování GraphQL Playground, což je webová aplikace umožňující simulování dotazů, které má funkce jako IDE, tedy našeptávání, kontrola typů, kontrola syntaxe, \ldots{}.
 
 \subsection{Apollo Client}
 \label{ss:apollo_client}
-Apollo Client je od stejné společnosti jako \ref{ss:apollo_server} a tyto dvě knihovny nejlépe fungují právě, když jsou pohromadě. Mezi hlavní výhody Apollo Client patří snadné cachování, velké množství dalších balíčků od komunity, nebo správa lokálního stavu aplikace kterému se budeme věnovat podrobněji v~sekci \ref{ss:local_state_management}.
+Apollo Client je od stejné společnosti jako~\ref{ss:apollo_server} a tyto dvě knihovny nejlépe fungují právě, když jsou pohromadě. Mezi hlavní výhody Apollo Client patří snadné cachování, velké množství dalších balíčků od komunity, nebo správa lokálního stavu aplikace, kterému se budeme věnovat podrobněji v~sekci~\ref{ss:local_state_management}.
 
 \subsection{React}
 \label{ss:react}
-Konečná volba padla na React hlavně z~důvodu největší popularity a tedy i největší podpory ze strany komunity. V~rámci této práce je již zakomponováno několik technologíí, které nejsou zatím se stabilním stavu a je tedy mít nějaký styčný bod, na který je možný plně spoléhat. I~z~toho důvodu byla použita stabilní verze Reactu a ne \emph{nightly} nebo \emph{experimentální}, které sice poskytují některé pěkné funkcionality, např. \emph{Concurrent Mode} zrychlující render aplikace nebo \emph{Suspense} zjednodušující čekání na asynchronní úkoly, ale výsledná aplikace by byla nestabilní, což by pro vývoj znamenalo značné zdržení.
+Konečná volba padla na React hlavně z~důvodu největší popularity, a tedy i největší podpory ze strany komunity. V~rámci této práce je již zakomponováno několik technologíí, které nejsou zatím se stabilním stavu a je tedy mít nějaký styčný bod, na který je možný plně spoléhat. I~z~toho důvodu byla použita stabilní verze Reactu a ne \emph{nightly} nebo \emph{experimentální}, které sice poskytují některé pěkné funkcionality, např. \emph{Concurrent Mode} zrychlující render aplikace nebo \emph{Suspense} zjednodušující čekání na asynchronní úkoly, ale výsledná aplikace by byla nestabilní, což by pro vývoj znamenalo značné zdržení.
 
 
 \subsection{Storybook.js}

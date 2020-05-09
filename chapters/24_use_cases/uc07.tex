@@ -2,17 +2,17 @@
     Případ užití umožní uživateli si zobrazit vlastní uživatelský profil a upravovat některé hodnoty.
 
     \begin{scenario}{HS: Zobrazení profilu}{uc07:hs}
-        \item Scénář začne když uživatel zobrazí tuto komponentu.
-        \item Aplikace zobrazí uživatelský profil s~předvyplněnými polemi.
+        \item Scénář začne, když uživatel zobrazí tuto komponentu.
+        \item Aplikace zobrazí uživatelský profil s~předvyplněnými poli.
     \end{scenario}
 
     \begin{scenario}{AS01: Úprava hodnot}{uc07:as01}
         \item Scénář začne, když uživatel změní hodnotu v~některém z~polí.
         \item Aplikace umožní upravit hodnoty některých polí.
         \item Aplikace zobrazí tlačítko sloužící k~uložení informací \enquote{Save}.
-        \item Po kliknutí na tlačítko \enquote{Save} aplikace provede validace polí podle \nameref{uc07:alg1}.
+        \item Po kliknutí na tlačítko \enquote{Save} aplikace provede validace polí podle~\nameref{uc07:alg1}.
         \begin{itemize}
-            \item Pokud validace proběhnou úspěšně, pak jsou informace odeslány na server a pokračuje se \hyperref[uc07:as02]{AS02}.
+            \item Pokud validace proběhnou úspěšně, pak jsou informace odeslány na server a pokračuje se~\hyperref[uc07:as02]{AS02}.
             \item Jinak jsou zobrazeny chybové hlášky podle toho, jaké validace selhaly.
         \end{itemize}
         \item Pokud chce uživatel opustit stránku před uložením změněných hodnot, tak je o~tom informován s~možností uložit hodnoty.
