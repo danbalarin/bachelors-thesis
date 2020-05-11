@@ -12,12 +12,12 @@ Dalším důležitým faktorem je rychlost. Rychlost může ovlivnit několik fa
 
 Při výběru je třeba tedy dbát hlavně na bezpečnost a rychlost. Avšak je třeba zvážit i tzv. code reuse, tedy částečné přepoužití kódu, které muže zjednodušit a zpřehlednit kód aplikace.
 
-\subsubsection*{Javascript}
-Javascript je \emph{\uv{otevřený multiplatformní skriptovací jazyk pro tvorbu a přizpůsobení aplikací v~podnikových sítích a na internetu}}~\cite{netscapecommunicationscorporation_1995_press}, jako první implementovaný prohlížečem Netscape Navigator 2.0 a rychle adaptován ostatními prohlížeči.
+\subsubsection*{JavaScript}
+JavaScript je \emph{\uv{otevřený multiplatformní skriptovací jazyk pro tvorbu a přizpůsobení aplikací v~podnikových sítích a na internetu}}~\cite{netscapecommunicationscorporation_1995_press}, jako první implementovaný prohlížečem Netscape Navigator 2.0 a rychle adaptován ostatními prohlížeči.
 
-Výhodou je multiplatformnost a jednoduchost vývoje a nasazení. Hlavní nevýhodou je dynamické typovaní, které vede k~horší udržitelnosti kódu a odhalení většiny chyb až při běhu aplikace (absence statické kontroly). Tyto neduhy se dají odstranit použitím nějakou syntaktickou nadstavbou, jako je třeba Typescript nebo Flow, které přidávají statické typování proměnných a statickou kontrolu při překladu do Javascriptu.
+Výhodou je multiplatformnost a jednoduchost vývoje a nasazení. Hlavní nevýhodou je dynamické typovaní, které vede k~horší udržitelnosti kódu a odhalení většiny chyb až při běhu aplikace (absence statické kontroly). Tyto neduhy se dají odstranit použitím nějakou syntaktickou nadstavbou, jako je třeba TypeScript nebo Flow, které přidávají statické typování proměnných a statickou kontrolu při překladu do JavaScriptu.
 
-Javascript se původně vyskytoval jen v~prohlížeči, což znamená že nebyl použitelný pro vývoj desktopových a serverových aplikací. To se změnilo s~příchodem Node.js. Node.js je prostředí, které umožňuje spouštět javascriptové skripty mimo prohlížeč.
+JavaScript se původně vyskytoval jen v~prohlížeči, což znamená že nebyl použitelný pro vývoj desktopových a serverových aplikací. To se změnilo s~příchodem Node.js. Node.js je prostředí, které umožňuje spouštět javascriptové skripty mimo prohlížeč.
 
 \subsubsection*{Java}
 Staticky typovaný, multiplatformní programovací jazyk vycházející z~jazyka C, zaštítěný firmou Oracle. Patří mezi nejpopulárnější a nejužívanější programovací jazyky~\cite{stackexchangeinc_2019_stack}. Jeho hlavní užití je právě na straně serveru, a to v~kombinaci s~frameworkem Spring Boot~\cite{jetbrainssro_2019_demographics}.
@@ -29,9 +29,9 @@ Jazyk velmi podobný Javě, vyvíjený firmou Microsoft. Jeho hlavní nevýhodou
 \label{ss:web}
 Webová aplikace je pro uživatele nejpřístupnější formou, nemusí nic instalovat, stahovat, pouze otevře prohlížeč s~webovou adresou a aplikaci má přístupnou jak na počítači, tak i na mobilu. Nevýhoda oproti mobilní aplikaci je, že vyžaduje přístup k~internetu (ne vždy, viz~\hyperref[sss:pwa]{PWA}).
 
-\subsubsection*{Javascript}
+\subsubsection*{JavaScript}
 \label{ss:javascript}
-Pro vývoj webové aplikace lze v~Javascriptu zvolit z~mnoha možností, ať už co se týče syntaktické nadstavby (Typescript, Flow), nebo knihoven a frameworků. Jelikož jich je velké množství, tak si jen stručně probereme tři nejpopulárnější a to React, Angular a Vue~\ref{fig:popularity_plot}.
+Pro vývoj webové aplikace lze v~JavaScriptu zvolit z~mnoha možností, ať už co se týče syntaktické nadstavby (TypeScript, Flow), nebo knihoven a frameworků. Jelikož jich je velké množství, tak si jen stručně probereme tři nejpopulárnější a to React\footnote{https://reactjs.org/}, Angular\footnote{https://angular.io/} a Vue\footnote{https://vuejs.org/}~\ref{fig:popularity_plot}.
 
 React je knihovna vyvíjená společností Facebook, která ho sama využívá pro tvorbu jejich aplikací, např Facebook nebo Messenger. Jeho hlavní výhodou je, možnost si spoustu věcí přizpůsobit k~vlastní potřebě (např. routing, globální uložiště dat, \ldots{}), což mimo jiné vede k~menší velikosti výsledné aplikace a vyšší rychlosti. React sám o~sobě není ani závislý na prohlížeči a může být využit např. pro vývoj aplikace spouštěné z~příkazové řádky.
 
@@ -42,13 +42,12 @@ Vue je knihovna velmi podobná Reactu, sdílí spolu velkou část ideologií~\c
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{assets/popularity_plot.png}
-    \caption{Popularita Javascriptových frameworků}
+    \caption{Popularita javascriptových frameworků \cite{potter_2020_npm}}
     \label{fig:popularity_plot}
-    \textit{Zdroj:}~https://www.npmtrends.com/@angular/core-vs-react-vs-vue
 \end{figure}
 
 \subsubsection*{C\# }
-V~C\# se dá vyvíjet i frontend a to za pomoci frameworku ASP.NET, který závisí na frameworku .NET. V~dnešní době se na nové projekty již příliš nevyužívá. Lze jej využít v~kombinaci s~Javascriptem a jeho knihovnami. Největší výhoda tohoto přístupu je striktní dodržení přístupu Model-View-Controler, nevýhodou jsou vyšší nároky na znalost obou technologií, což pro juniorního programátora může být problém.
+V~C\# se dá vyvíjet i frontend a to za pomoci frameworku ASP.NET, který závisí na frameworku .NET. V~dnešní době se na nové projekty již příliš nevyužívá. Lze jej využít v~kombinaci s~JavaScriptem a jeho knihovnami. Největší výhoda tohoto přístupu je striktní dodržení přístupu Model-View-Controler, nevýhodou jsou vyšší nároky na znalost obou technologií, což pro juniorního programátora může být problém.
 
 \subsection{Mobil}
 \label{ss:mobile}
@@ -68,7 +67,7 @@ Hybridní aplikace jsou posledním mezikrokem mezi mobilní a webovou aplikací.
 \subsubsection*{Nativní aplikace}
 Poslední kategorie jsou aplikace nativní, tedy přímo určené pouze na mobilní zařízení. Existuje mnoho programovacích jazyků, které lze při vývoji použít, ať už to je Java a Kotlin pro Android nebo Objective C a Swift pro iOS. Hlavní nevýhoda tedy je mnohem více práce a potenciálně duplicitní kód. Z~toho důvodu existují různé multiplatformní frameworky, které tyto neduhy řeší.
 
-V~rámci této práce si zmíníme pouze React Native. Jedná se o~framework syntaxem velmi podobný frameworku ReactJS a důvod proč zmínit zrovna tento a ne ostatní, je možnost přepoužití kódu z~webové aplikace. Jisté části aplikace napsané v~ReactJS lze bez úpravy použít i v~React Native a obráceně. Tedy aplikace psaná za použití React Native má stejné benefity jako aplikace nativní, ale zároveň v~ní lze přepoužít části aplikace webové. Příklad takového přepoužití je zde~\cite{sepulveda_2017_share}.
+V~rámci této práce si zmíníme pouze React~Native\footnote{https://reactnative.dev/}. Jedná se o~framework syntaxem velmi podobný frameworku ReactJS a důvod proč zmínit zrovna tento a ne ostatní, je možnost přepoužití kódu z~webové aplikace. Jisté části aplikace napsané v~ReactJS lze bez úpravy použít i v~React Native a obráceně. Tedy aplikace psaná za použití React Native má stejné benefity jako aplikace nativní, ale zároveň v~ní lze přepoužít části aplikace webové. Příklad takového přepoužití je zde~\cite{sepulveda_2017_share}.
 
 Toto přepoužití vyplývá z~architektury samotného Reactu, kde React je knihovna, která zpracovává vstupy, ovládá stav aplikace, kontroluje změny a generuje výstupy. Následně na řadu přichází tzv. \uv{Renderer}, který funguje jako rozhraní mezi platformou (web, mobil, konzole, \ldots{}) a Reactem. U~webu je tímto rozhraním knihovna \uv{React-DOM} a u~mobilu právě \uv{React Native}.
 

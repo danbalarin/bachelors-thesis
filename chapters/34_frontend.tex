@@ -8,7 +8,7 @@ Největším oříškem, co se týče nastavení projektu a výběru technologi�
 
 Pro funkci \acrshort{ssr} však musíme mít další Node.js server, který obsluhuje http požadavky. Tento server pro vybrané, nebo pro všechny cesty vyrenderuje aplikaci a vrátí html soubor, které již danou aplikaci obsahuje. Pokud takto obsluhuje jen některé cesty, tak pro zbylé vrací standardní \emph{prázdný} html soubor, bílou stránku, a render aplikace pak nechává na klientovi. Pokud byla aplikace renderovaná na serveru, tak klient musí provést ještě jeden krok, zvaný hydratace, který celou aplikaci projde, vytvoří virtuální DOM strukturu, se kterou potom vnitřně pracuje a aplikaci oživí.
 
-Tato aplikace implementuje \acrshort{ssr} kvůli~\nameref{NP03}. Aplikace bez \acrshort{ssr} vrací klientovi html soubor s~špatně nastavenou hlavičkou a web crawleři většinou nemají podporu Javascriptu, takže ani nikdy neuvidí vyrenderovanou aplikaci. Správné nastavení hlavičky zajišťuje knihovna \emph{react-helmet}. který při renderování na straně serveru extrahuje title a meta tagy, které jsou následně poslané v~hlavičce výsledku.
+Tato aplikace implementuje \acrshort{ssr} kvůli~\nameref{NP03}. Aplikace bez \acrshort{ssr} vrací klientovi html soubor s~špatně nastavenou hlavičkou a web crawleři většinou nemají podporu JavaScriptu, takže ani nikdy neuvidí vyrenderovanou aplikaci. Správné nastavení hlavičky zajišťuje knihovna \emph{react-helmet}. který při renderování na straně serveru extrahuje title a meta tagy, které jsou následně poslané v~hlavičce výsledku.
 
 \subsection{Lokalní správa stavu aplikace}
 \label{ss:local_state_management}
@@ -18,7 +18,7 @@ Apollo Client přistupuje ke správě lokálního stavu aplikace odlišně, než
 
 \subsection{CSS in JS}
 \label{ss:css_in_js}
-Je mnoho možností, jak přistupovat k~stylování komponent, čisté CSS, preprocesory SASS či LESS a CSS modules. Další možností je CSS in JS, které kombinuje všechny uvedené možnosti a navíc zlehčuje interakci s~Javascriptem. Místo standardních souborů dedikovaných jen stylování, jsou styly psané v~rámci Javascriptových nebo Typescriptových souborech ve formě funkcí, objektů nebo template literals. Dvě nejpoužívanější knihovny poskytující tuto funkcionalitu jsou \href{https://styled-components.com/}{\emph{styled-components}} a \href{https://emotion.sh/}{\emph{emotion}}. Emotion má menší velikost balíčku, lepší podporu \acrshort{ssr}, je rychlejší \cite{shehet_2020_css}, lépe optimalizovaný pro \gls{tree shaking}. Volba právě této knihovny umožnila rychlý a jednoduchý vývoj s~podporou více vzhledů aplikace.
+Je mnoho možností, jak přistupovat k~stylování komponent, čisté CSS, preprocesory SASS či LESS a CSS modules. Další možností je CSS in JS, které kombinuje všechny uvedené možnosti a navíc zlehčuje interakci s~JavaScriptem. Místo standardních souborů dedikovaných jen pro stylování, jsou styly psané v~rámci javascriptových nebo typescriptových souborů ve formě funkcí, objektů nebo template literals. Dvě nejpoužívanější knihovny poskytující tuto funkcionalitu jsou \href{https://styled-components.com/}{\emph{styled-components}} a \href{https://emotion.sh/}{\emph{emotion}}. Emotion má menší velikost balíčku, lepší podporu \acrshort{ssr}, je rychlejší \cite{shehet_2020_css}, lépe optimalizovaný pro \gls{tree shaking}. Volba právě této knihovny umožnila rychlý a jednoduchý vývoj s~podporou více vzhledů aplikace.
 
 \subsection{Code splitting}
 \label{ss:code_splitting}
@@ -35,7 +35,7 @@ import HomePage from './homepage';
 const LoadableHopePage = Loadable({
     // import funkce
     loader: () => import('./homepage'),
-    // komponenta zobrazená místo té načítané v~průběhu načítaní
+    // komponenta zobrazená místo té načítané v průběhu načítaní
     loading: Loading,
 });
     \end{minted}
