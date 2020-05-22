@@ -16,9 +16,9 @@ UserSchema.set('toJSON', {
     \label{code:to_json_user}
 \end{figure}
 
-Největší problém bylo provázání modulů, tak aby na sobě byly nezávislé ale zároveň poskytovali všechny funkcionality. Konkrétně se jednalo o~modul uživatele a výuky, například kvůli~\ref{FP24}, který vyžaduje propojení jednotlivých modulů. Tento problém byl vyřešen pomocí inicializačního kontextu.
+Největší problém bylo provázání modulů, tak aby na sobě byly nezávislé ale zároveň poskytovali všechny funkcionality. Konkrétně se jednalo o~modul uživatele a výuky, například kvůli~\hyperref[FP24]{FP24}, který vyžaduje propojení jednotlivých modulů. Tento problém byl vyřešen pomocí inicializačního kontextu.
 
-Každý modul je při spuštění aplikace inicializován s~inicializačním kontextem. Inicializační kontext~\ref{code:server_module_options} je objekt, který modulům dodává potřebné objekty pro správnou inicializaci. Tento kontext jednotlivé moduly mohou modifikovat, jelikož JavaScript pro neprimitivní datové používá ukazatele, tedy změny ve vstupním parametru jsou zachovány. První je tedy inicializován modul uživatele, který uloží do \mintinline{typescript}{creatorModel} vytvořený mongoose model uživatele, se kterým další moduly mohou pracovat.
+Každý modul je při spuštění aplikace inicializován s~inicializačním kontextem. Inicializační kontext je objekt, který modulům dodává potřebné objekty pro správnou inicializaci. Tento kontext jednotlivé moduly mohou modifikovat, jelikož JavaScript pro neprimitivní datové používá ukazatele, tedy změny ve vstupním parametru jsou zachovány. První je tedy inicializován modul uživatele, který uloží do \mintinline{typescript}{creatorModel} vytvořený mongoose model uživatele, se kterým další moduly mohou pracovat.
 
 \begin{figure}[h!]
     \centering

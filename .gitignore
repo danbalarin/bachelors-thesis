@@ -21,6 +21,10 @@
 *.bcf
 *.xml
 *.te~
+*.nav
+*.snm
+*.vrb
+*.pyg
 _minted*
 __latex*
 !*assets/*.pdf

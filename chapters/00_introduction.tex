@@ -1,30 +1,32 @@
 \begin{introduction}
     \label{ch:introduction}
     \section{Motivace}
-    V~posledních letech roste popularita hry na hudební nástroje a s~rozvojem informačních technologií s~tím souvisí i snaha uživatelů učit se sami za pomoci veřejně dostupných aplikací. Pro začátečníky se doporučují nástroje buď drnkací (ukulele, kytara) nebo dechové (harmonika, flétna)~\cite{s_2016_the}~\cite{richardson_2019_top}.
+    V~posledních letech roste popularita hry na hudební nástroje a s~rozvojem informačních technologií s~tím souvisí i snaha uživatelů učit se sami za pomoci veřejně dostupných aplikací. Pro začátečníky se doporučují nástroje buď drnkací (ukulele, kytara) nebo dechové (harmonika, flétna)~\cite{s_2016_the, richardson_2019_top}.
 
     Ukulele oproti kytaře má tu výhodu, že je menší, má o~dvě struny méně, struny tolik neřežou do prstů a je tedy jednodušší pro začátečníka. Oproti nástrojům dechovým má hlavně tu výhodu, že se na něj dá zahrát více populárních písní.
 
-    Aktuálně existuje již několik aplikací, ať už webových nebo mobilních, které umožňují uživateli učit se hrát na ukulele sám doma. Problémy těchto aplikací jsou, že jsou buď placené, neobsahují všechny funkcionality, nebo nejsou uživatelsky přívětivé. Rozborem již existujících řešení se podrobněji zabývá kapitola~\nameref{ch:analysis}.
+    Aktuálně existuje již několik aplikací, ať už webových nebo mobilních, které umožňují uživateli učit se hrát na ukulele sám doma. Nevýhody těchto aplikací jsou, že jsou buď placené, neobsahují všechny funkcionality, nebo nejsou uživatelsky přívětivé. Rozborem již existujících řešení se podrobněji zabývá kapitola~\nameref{ch:analysis}.
 
-    K~této problematice jsem se dostal, jelikož jsem se sám začal učit hrát na ukulele. Již existující aplikace mi nevyhovují, a to převážně kvůli chybějícím funkcím, nebo neintuitivnímu ovládání. Z~tohoto důvodu mi přišlo ideální vytvořit vlastní aplikaci, která bude obsahovat veškeré funkce chybějící u~již existujících aplikací, bude snadno ovladatelná a bude fungovat na počítači i chytrém telefonu.
+    K~této problematice jsem se dostal, jelikož jsem se sám začal učit hrát na ukulele. Existující aplikace mi nevyhovují, a to převážně kvůli chybějícím funkcím nebo neintuitivnímu ovládání. Z~tohoto důvodu mi přišlo ideální vytvořit vlastní aplikaci, která bude obsahovat veškeré funkce chybějící u~existujících aplikací, bude snadno ovladatelná a bude fungovat na počítači i chytrém telefonu.
 
 
     \section{Cíle práce}
-    Hlavním cílem práce je navrhnout, vytvořit a otestovat aplikaci, která umožní začátečníkovi naučit se hrát na ukulele, čehož lze dosáhnout několika způsoby, kterými se budeme zabývat v~kapitole~\nameref{ch:analysis}. Dílčím cílem je umožnit již zkušenému hráči vyhledat jednotlivé akordy nebo akordy a text k~písni.
+    Hlavním cílem práce je navrhnout, vytvořit a otestovat aplikaci, která umožní začátečníkovi naučit se hrát na ukulele, čehož lze dosáhnout několika způsoby, kterými se zabývá v~kapitola~\nameref{ch:analysis}. Dílčím cílem je umožnit již zkušenému hráči vyhledat jednotlivé akordy nebo akordy a text k~písni.
 
-    Důležitou součástí aplikace je jednoduchost použití, uživatelská přívětivost a zároveň možnost použití některých složitějších mechanismů, jako je například výuka přechytávání akordů s~možností zapnutí metronomu, nebo vyhledávání v~několika různých množinách (např. akordy, písně a autoři).
+    Důležitou součástí aplikace bude jednoduchost použití, uživatelská přívětivost a zároveň možnost použití některých složitějších mechanismů, jako je například výuka přechytávání akordů s~možností zapnutí metronomu, nebo vyhledávání v~několika různých množinách (např. akordy, písně a autoři).
 
     \section{Členění práce}
-    Práce je členěna do kapitol odpovídajících krokům vývoje software podle principů metodologie unifikovaného vývoje~\cite[s.~51‑68]{arlow_2007_uml}.
+    Práce je členěna do kapitol odpovídajících krokům vývoje software podle principů metodologie unifikovaného vývoje~\cite[s.~51–⁠68]{arlow_2007_uml}.
 
-    Kapitola~\nameref{ch:analysis} se zabývá průzkumem již existujících aplikací, zjištění cílové skupiny, dostupných technologií a platforem a možnostmi, jak k~danému problému přistoupit.
+    \hyperref[ch:glossary]{První kapitola} stanovuje a ujasňuje základní pojmy, které se týkají teorie hudby a hraní na ukulele.
 
-    ~\hyperref[ch:design]{Druhá kapitola práce}, se věnuje návrhu aplikace. Návrh aplikace je nedílnou součástí vývoje složitějších systémů a aplikací. Umožní programátorovi, nebo týmu programátorů, mít lepší představu o~celém projektu, zjistit nedostatky ještě před implementací, nebo například stanovit místa v~aplikaci kde může v~budoucnu dojít k~rozšíření a aplikaci na to řádně připravit. Tato kapitola obsahuje formální stanovení požadavků na aplikaci a vytvoření náhledů uživatelského rozhraní.
+    Kapitola~\nameref{ch:analysis} se zabývá průzkumem existujících aplikací, zjištění cílové skupiny, dostupných technologií a platforem a možnostmi, jak k~danému problému přistoupit.
+
+    \hyperref[ch:design]{Třetí kapitola práce}, se věnuje návrhu aplikace. Návrh aplikace je nedílnou součástí vývoje složitějších systémů a aplikací. Umožní programátorovi, nebo týmu programátorů, mít lepší představu o~celém projektu, zjistit nedostatky ještě před implementací, nebo například stanovit místa v~aplikaci kde může v~budoucnu dojít k~rozšíření a aplikaci na to řádně připravit. Tato kapitola obsahuje formální stanovení požadavků na aplikaci a vytvoření náhledů uživatelského rozhraní.
 
     Kapitola~\nameref{ch:implementation} rozebírá prostředí v~jakém probíhal vývoj aplikace, konečný výběr technologií, určení logického členění a architektury aplikace a některé aspekty zdrojového kódu samotné aplikace. Správně zvolená architektura aplikace usnadní vývoj teď i případné rozšiřování, a může umožnit přepoužití části aplikace při práci na aplikaci jiné.
 
-    ~\hyperref[ch:testing]{Čtvrtá kapitola} se věnuje testováním aplikace. Testování je naprosto nezbytné pro vývoj kvalitní aplikace. Vývojář díky tomu zjistí, jakými nedostatky aplikace trpí ještě před tím, než na ně narazí uživatel. Jelikož tyto nedostatky mohou být kritické, může díky nim docházet k~úniku citlivých informací a tím poškodit uživatele. Proto se každý systém a aplikace testuje a to na několika úrovních.
+    \hyperref[ch:testing]{Pátá kapitola} se věnuje testováním aplikace. Testování je naprosto nezbytné pro vývoj kvalitní aplikace. Umožňuje odhalit nedostatky, díky kterým může docházet k~úniku citlivých informací a tím poškodit uživatele nebo provozovatele. Proto se každý systém a aplikace testuje a to na několika úrovních.
 
-    ~\hyperref[ch:ci_cd]{Poslední kapitola} probírá automatické testování a nasazování. Automatizace testů a nasazování zrychluje vývoj a celkovou workflow týmu. Tato automatizace deleguje spouštění testů a buildů aplikace na dedikovaný server, takže se vývojář může zatím věnovat něčemu jinému.
+    \hyperref[ch:ci_cd]{Poslední kapitola} probírá automatické testování a nasazování. Automatizace testů a nasazování zrychluje vývoj a celkovou workflow týmu. Tato automatizace deleguje spouštění testů a buildů aplikace na dedikovaný server, takže se vývojář může zatím věnovat něčemu jinému.
 \end{introduction}

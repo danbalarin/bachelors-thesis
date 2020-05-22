@@ -1,5 +1,4 @@
 % arara: xelatex: { shell: yes }
-% arara: makeglossaries
 % arara: biber
 % arara: xelatex: { shell: yes }
 % arara: xelatex: { shell: yes }
@@ -7,20 +6,18 @@
 \documentclass[thesis=B,czech]{template/FITthesis}[2019/03/06]
 \selectlanguage{czech}
 
-\usepackage[style=iso-numeric]{biblatex}
 \usepackage[utf8]{inputenc}
-
+\usepackage[final]{pdfpages}
 \usepackage{dirtree}
 \usepackage{minted, xcolor}
+\usepackage{pifont}
 \usemintedstyle{friendly}
-% \definecolor{bg}{HTML}{282828}
-% \setminted{bgcolor=bg}
-
 \usepackage{csquotes}
 \usepackage{xevlna}
 \usepackage{pgfplots}
 
-\bibliography{bybliography}
+\usepackage[style=iso-numeric]{biblatex}
+\addbibresource{bybliography.bib} 
 
 
 % % list of acronyms
@@ -38,8 +35,8 @@
 \authorWithDegrees{Dan Balarin} %jméno autora včetně současných akademických titulů
 \author{Dan Balarin} %jméno autora bez akademických titulů
 \supervisor{Ing. Marek Suchánek}
-\acknowledgements{Děkuji vedoucímu práce, Ing. Marku Suchánkovi za odborné vedení a ochotu při tvorbě práce. Dále chci poděkovat přítelkyni a rodičům za podporu a schovívavost v~průběhu studia.}
-\abstractCS{Bakalářská práce se zabývá vývojem webové aplikace podporující výuku hraní na ukulele. Aplikace je vyvíjena v~souladu s~metodami softwarového inženýrství. Zkoumá existující řešení, dostupné technologie a cílovou skupinu. Následně stanoví form8lní požadavky na aplikaci a dané požadavky implementuje a testuje. V~poslední části rozebírá automatické testování a nasazování. Výsledkem je funkční aplikace umožňující výuku hraní na ukulele, která je díky zvolené architektuře snadno rozšiřitelná.}
+\acknowledgements{Děkuji vedoucímu práce, Ing. Marku Suchánkovi, za odborné vedení a ochotu při tvorbě práce. Dále chci poděkovat přítelkyni a rodičům za podporu a schovívavost v~průběhu studia.}
+\abstractCS{Bakalářská práce se zabývá vývojem webové aplikace podporující výuku hraní na ukulele. Aplikace je vyvíjena v~souladu s~metodami softwarového inženýrství. Zkoumá existující řešení, dostupné technologie a cílovou skupinu. Následně stanovuje formální požadavky na aplikaci a dané požadavky implementuje a testuje. V~poslední části rozebírá automatické testování a nasazování. Výsledkem je funkční aplikace umožňující výuku hraní na ukulele, která je díky zvolené architektuře snadno rozšiřitelná.}
 \abstractEN{Bachelor thesis describes the development of web application for learning how to play on the ukulele. The application is developed according to methods of software engineering. Thesis researches existing solutions, available technologies, and target audience. After that, it sets formal requirements on application and implements and tests these requirements. The last part is focused on automatic testing and deployment. The result is a functional application for learning how to play on the ukulele, which is thanks to the good system architecture easily expandable.}
 \placeForDeclarationOfAuthenticity{V~Praze}
 \declarationOfAuthenticityOption{4} %volba Prohlášení (číslo 1-6)
@@ -47,17 +44,6 @@
 \keywordsEN{ukulele, metronome, chords, interactive lessons, web application, React, GraphQL, continuous integration, automatic deployment}
 \website{https://github.com/danbalarin/bachelors-thesis} %volitelná URL práce, objeví se v tiráži - úplně odstraňte, nemáte-li URL práce
 
-\newglossaryentry{strumming pattern}
-{
-        name={strumming pattern},
-        description={Způsob brnkání na struny}
-}
-
-\newglossaryentry{tree shaking}
-{
-        name={tree shaking},
-        description={Odstranění nepoužité části knihovny}
-}
 
 \input{chapters/99_acronyms.tex}
 
@@ -68,6 +54,8 @@
 \begin{document}
 
 \input{chapters/00_introduction.tex}
+
+\input{chapters/05_basic_glosary.tex}
 
 \input{chapters/10_analysis.tex}
 
@@ -81,7 +69,8 @@
 
 \input{chapters/90_conclusion.tex}
 
-\printbibliography[title={Literatura}]
+\setcounter{biburllcpenalty}{9000}
+\printbibliography
 
 \appendix
 
