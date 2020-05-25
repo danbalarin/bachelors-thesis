@@ -10,9 +10,62 @@ Práce uvažuje o~návrhu uživatelského rozhraní jako o~wireframu, jelikož v
 \label{ss:wireframe_song}
 Nejdůležitější stránka celé aplikace. Jedná se o~komponentu z~\hyperref[uc04]{PU04}, tedy výuka písní a obsahuje komponenty~\hyperref[uc01]{Metronom},~\hyperref[uc02]{Akordy} a~\hyperref[uc03]{Strumming pattern}. Stránka obsahuje hlavní panel s~možností vyhledávání a tlačítka pro registraci a přihlášení. V~hlavní části je nejprve název písně, pak název autora a následně text a akordy písně. Zmíněné komponenty jsou po pravé straně, jelikož kdyby byly pozicovány nalevo, tak by se uživateli mohl číst špatně text, který by byl zarovnán vedle komponent. Celý obsah je na velké obrazovce odsazen na střed, tak aby se uživatel mohl soustředit pouze na část obrazovky.
 
-\begin{figure}[h!]
+\begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{assets/song_page.png}
-    \caption{Stránka s~písní}
-    \label{fig:song_page}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{assets/song_page.png}
+        \caption{Stránka s~písní}
+        \label{fig:song_page}
+    \end{subfigure}
+    \par\bigskip
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[width=.7\textwidth]{assets/login.png}
+        \caption{Přilašovací okno}
+        \label{fig:login_modal}
+    \end{subfigure}
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{assets/search.png}
+        \caption{Vyhledávací našeptávač}
+        \label{fig:search}
+    \end{subfigure}
+    \caption{Wireframy}
+    \label{fig:wireframes}
 \end{figure}
+
+% \begin{figure}
+%     \begin{subfigure}{\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{assets/song_page.png}
+% \caption{Stránka s~písní}
+% \label{fig:song_page}
+%     \end{subfigure}
+
+%     \medskip
+%     \begin{subfigure}{.3\textwidth}
+%         \centering
+%         \includegraphics[width=.95\textwidth]{assets/login.png}
+% \caption{Přilašovací okno}
+% \label{fig:login_modal}
+%     \end{subfigure}
+
+%     \begin{subfigure}{.3\textwidth}
+%         \centering
+%         \includegraphics[width=.95\textwidth]{assets/signup.png}
+%         \caption{Registrační okno}
+%         \label{fig:signup_modal}
+%     \end{subfigure}
+
+%     \begin{subfigure}{.3\textwidth}
+%         \centering
+%         \includegraphics[width=.95\textwidth]{assets/search.png}
+% \caption{Vyhledávací našeptávač}
+% \label{fig:search}
+%     \end{subfigure}
+
+
+%     \caption{Wireframy}
+%     \label{fig:wireframes}
+% \end{figure}

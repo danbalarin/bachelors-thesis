@@ -2,7 +2,7 @@
 \label{sc:backend}
 Realizace samotného backendu nebyla náročná, právě díky vhodně zvoleným technologiím. Většina potřeb byla vyřízena pouhým definováním mongoose schémat, ze kterých se následně vytvořili modely a z~nich GraphQL schéma. Úprav modelů bylo minimum, jako příklad takové úpravy by mohlo být smazání pole hesla z~modelu uživatele při vracení daného modelu. Tato úprava je vidět na ukázce kódu~\ref{code:to_json_user}, kde je k~metodě \mintinline{typescript}{toJSON}, přidaný transformátor, který vytvoří instanci \mintinline{typescript}{UserInteractor} a zavolá \mintinline{typescript}{ui.stripUser()}. Tato metoda pouze vrátí kopii původního uživatele bez hesla.
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \begin{minted}{javascript}
 UserSchema.set('toJSON', {
@@ -16,24 +16,26 @@ UserSchema.set('toJSON', {
     \label{code:to_json_user}
 \end{figure}
 
+\pagebreak
+
 Největší problém bylo provázání modulů, tak aby na sobě byly nezávislé ale zároveň poskytovali všechny funkcionality. Konkrétně se jednalo o~modul uživatele a výuky, například kvůli~\hyperref[FP24]{FP24}, který vyžaduje propojení jednotlivých modulů. Tento problém byl vyřešen pomocí inicializačního kontextu.
 
 Každý modul je při spuštění aplikace inicializován s~inicializačním kontextem. Inicializační kontext je objekt, který modulům dodává potřebné objekty pro správnou inicializaci. Tento kontext jednotlivé moduly mohou modifikovat, jelikož JavaScript pro neprimitivní datové používá ukazatele, tedy změny ve vstupním parametru jsou zachovány. První je tedy inicializován modul uživatele, který uloží do \mintinline{typescript}{creatorModel} vytvořený mongoose model uživatele, se kterým další moduly mohou pracovat.
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \begin{minted}{javascript}
 interface ServerModuleOptions<STypeComposer = any> {
     // Objekty vyjímek (validace, autorizace)
     errors: ServerModuleErrors;
-    // Funkce která z objektu vytvoří autorizační token,
+    // Funkce která z~objektu vytvoří autorizační token,
     // který je odeslán
     tokenCreator: TokenCreator;
     // Hash funkce
     hashFunction: HashFunction; 
     // Objekt poskytující metody pro vytváření umělých dat
     seedFaker: SeedFaker;
-    // type composer z graphql-compose
+    // type composer z~graphql-compose
     creatorModel?: STypeComposer; 
 }
     \end{minted}
@@ -43,7 +45,7 @@ interface ServerModuleOptions<STypeComposer = any> {
 
 Každý modul vystavuje inicializační metodu, která má jako parametr inicializační kontext a jako výsledek vrací pole~\hyperref[code:server_module_model]{ServerModuleModelů}. Tento model musí být generický, jelikož tento interface je definovaný v~balíčku \emph{core-nodejs}, který má minimum závislostí.
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \begin{minted}{javascript}
 interface ServerModuleModel<
@@ -62,7 +64,7 @@ interface ServerModuleModel<
     query: { [key: string]: RResolver };
     // výsledek seedovací funkce
     seed: TSeed;
-    // type composer z graphql-compose 
+    // type composer z~graphql-compose 
     typeComposer: STypeComposer;
     // voitelná vyhledávací query
     searchQuery?: RResolver;
@@ -73,5 +75,7 @@ interface ServerModuleModel<
 \end{figure}
 
 Inicializace a spuštění backend aplikace může probíhat dvěma způsoby. První způsob je vytvoření dokumentů a vložení inicializačních dat (tzv. seed databáze) a druhý způsob je spuštění samotného serveru a poskytování GraphQL API. V~obou případech se nejprve inicializují moduly, nejprve uživatelský, následně ostatní. V~případě seedu databáze se pak vytvoří spojení s~databází a postupně se do dokumentů vkládají inicializační data (\mintinline{typescript}{ServerModuleModel::seed}). Jakmile jsou data vložena, tak se aplikace ukončí. V~případě druhém se po inicializaci modulů začne vytvářet GraphQL endpoint. Nejprve se projdou všechny inicializované \emph{modely} a přidají se mutace a query. Následně se vytvoří poslední část samotného endpointu, vyhledávací query, server se připojí k~databázi a začne vystavovat GraphQL API.
+
+\pagebreak
 
 Jelikož je potřeba vyhledávat mezi moduly, ale ne všechny entity a nejednotným způsobem, tak pro každou entitu může být specifikovaná vyhledávací query. Výsledná souhrnná vyhledávací query pak jen paralelně provolá všechny vyhledávací query z~modelů, spojí výsledky do pole a vrátí výsledek. Tento přístup umožňuje specifikovat jaké entity a případně jakým způsobem se mají vyhledávat. Další výhoda je, že na sobě moduly nijak nezávisí a další rozšíření je velmi jednoduché.

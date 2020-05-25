@@ -18,7 +18,7 @@ Apollo Client přistupuje ke správě lokálního stavu aplikace odlišně, než
 
 \subsection{CSS in JS}
 \label{ss:css_in_js}
-Je mnoho možností, jak přistupovat k~stylování komponent, čisté CSS, preprocesory SASS či LESS a CSS modules. Další možností je CSS in JS, které kombinuje všechny uvedené možnosti a navíc zlehčuje interakci s~JavaScriptem. Místo standardních souborů dedikovaných jen pro stylování, jsou styly psané v~rámci javascriptových nebo typescriptových souborů ve formě funkcí, objektů nebo template literals. Dvě nejpoužívanější knihovny poskytující tuto funkcionalitu jsou \href{https://styled-components.com/}{\emph{styled-components}} a \href{https://emotion.sh/}{\emph{emotion}}. Emotion má menší velikost balíčku, lepší podporu \acrshort{ssr}, je rychlejší \cite{shehet_2020_css}, lépe optimalizovaný pro tree~shaking~\footnote{Odstranění nepoužité části knihovny z výsledného balíčku}. Volba právě této knihovny umožnila rychlý a jednoduchý vývoj s~podporou více vzhledů aplikace.
+Je mnoho možností, jak přistupovat k~stylování komponent, čisté CSS, preprocesory SASS či LESS a CSS modules. Další možností je CSS in JS, které kombinuje všechny uvedené možnosti a navíc zlehčuje interakci s~JavaScriptem. Místo standardních souborů dedikovaných jen pro stylování, jsou styly psané v~rámci javascriptových nebo typescriptových souborů ve formě funkcí, objektů nebo template literals. Dvě nejpoužívanější knihovny poskytující tuto funkcionalitu jsou \href{https://styled-components.com/}{\emph{styled-components}} a \href{https://emotion.sh/}{\emph{emotion}}. Emotion má menší velikost balíčku, lepší podporu \acrshort{ssr}, je rychlejší \cite{shehet_2020_css}, lépe optimalizovaný pro tree~shaking~\footnote{Odstranění nepoužité části knihovny z~výsledného balíčku}. Volba právě této knihovny umožnila rychlý a jednoduchý vývoj s~podporou více vzhledů aplikace.
 
 \subsection{Code splitting}
 \label{ss:code_splitting}
@@ -35,7 +35,7 @@ import HomePage from './homepage';
 const LoadableHopePage = Loadable({
     // import funkce
     loader: () => import('./homepage'),
-    // komponenta zobrazená místo té načítané v průběhu načítaní
+    // komponenta zobrazená místo té načítané v~průběhu načítaní
     loading: Loading,
 });
     \end{minted}
