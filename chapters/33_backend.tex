@@ -43,9 +43,11 @@ interface ServerModuleOptions<STypeComposer = any> {
     \label{code:server_module_options}
 \end{figure}
 
-Každý modul vystavuje inicializační metodu, která má jako parametr inicializační kontext a jako výsledek vrací pole~\hyperref[code:server_module_model]{ServerModuleModelů}. Tento model musí být generický, jelikož tento interface je definovaný v~balíčku \emph{core-nodejs}, který má minimum závislostí.
+Každý modul vystavuje inicializační metodu, která má jako parametr inicializační kontext a jako výsledek vrací pole~\hyperref[code:server_module_model]{ServerModuleModel}. Tento model musí být generický, jelikož tento interface je definovaný v~balíčku \emph{core-nodejs}, který má minimum závislostí.
 
-\begin{figure}[h]
+Inicializace a spuštění backend aplikace může probíhat dvěma způsoby. První způsob je vytvoření dokumentů a vložení inicializačních dat (tzv. seed databáze) a druhý způsob je spuštění samotného serveru a poskytování GraphQL API. V~obou případech se nejprve inicializují moduly, nejprve uživatelský, následně ostatní. V~případě seedu databáze se pak vytvoří spojení s~databází a postupně se do dokumentů vkládají inicializační data (\mintinline{typescript}{ServerModuleModel::seed}). Jakmile jsou data vložena, tak se aplikace ukončí. V~případě druhém se po inicializaci modulů začne vytvářet GraphQL endpoint. Nejprve se projdou všechny inicializované \emph{modely} a přidají se mutace a query. Následně se vytvoří poslední část samotného endpointu, vyhledávací query, server se připojí k~databázi a začne vystavovat GraphQL API.
+
+\begin{figure}
     \centering
     \begin{minted}{javascript}
 interface ServerModuleModel<
@@ -73,9 +75,5 @@ interface ServerModuleModel<
     \caption{Server module model}
     \label{code:server_module_model}
 \end{figure}
-
-Inicializace a spuštění backend aplikace může probíhat dvěma způsoby. První způsob je vytvoření dokumentů a vložení inicializačních dat (tzv. seed databáze) a druhý způsob je spuštění samotného serveru a poskytování GraphQL API. V~obou případech se nejprve inicializují moduly, nejprve uživatelský, následně ostatní. V~případě seedu databáze se pak vytvoří spojení s~databází a postupně se do dokumentů vkládají inicializační data (\mintinline{typescript}{ServerModuleModel::seed}). Jakmile jsou data vložena, tak se aplikace ukončí. V~případě druhém se po inicializaci modulů začne vytvářet GraphQL endpoint. Nejprve se projdou všechny inicializované \emph{modely} a přidají se mutace a query. Následně se vytvoří poslední část samotného endpointu, vyhledávací query, server se připojí k~databázi a začne vystavovat GraphQL API.
-
-\pagebreak
 
 Jelikož je potřeba vyhledávat mezi moduly, ale ne všechny entity a nejednotným způsobem, tak pro každou entitu může být specifikovaná vyhledávací query. Výsledná souhrnná vyhledávací query pak jen paralelně provolá všechny vyhledávací query z~modelů, spojí výsledky do pole a vrátí výsledek. Tento přístup umožňuje specifikovat jaké entity a případně jakým způsobem se mají vyhledávat. Další výhoda je, že na sobě moduly nijak nezávisí a další rozšíření je velmi jednoduché.
