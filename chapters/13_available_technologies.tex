@@ -2,7 +2,7 @@
 \label{sc:available_technologies}
 Aplikace by měla být co nejdostupnější pro běžného uživatele, ideálně by tedy neměla vyžadovat stahování nebo instalaci. Z~podstaty této aplikace to ani není potřeba. Jediná výhoda kterou přináší desktopová aplikace je přímý přístup k~hardware a lepší výkon, jelikož ale tento typ aplikace nepotřebuje vykreslovat pokročilou 3D grafiku nebo spouštět složité algoritmy, tak není nutné se tím zabývat.
 
-Nabízí se tedy webová aplikace nebo mobilní aplikace. Oba typy aplikací se dělí na dvě části, část kterou vidí a se kterou interaguje uživatel nebo správce, která se nazývá frontend a část která obsluhuje práci s~databází, zpracovává požadavky na změny, autorizuje uživatele atd. Jeden backend přitom může obsluhovat frontend jak v~podobě webové, tak i mobilní aplikace. Sekce se tedy dělí na~\nameref{ss:backend}, \nameref{ss:web} a~\nameref{ss:mobile}.
+Nabízí se tedy webová aplikace nebo mobilní aplikace. Oba typy aplikací se dělí na dvě části, část kterou vidí a se kterou interaguje uživatel nebo správce, která se nazývá frontend a část která obsluhuje práci s~databází, zpracovává požadavky na změny, autorizuje uživatele atd, která se nazývá backend. Jeden backend přitom může obsluhovat frontend jak v~podobě webové, tak i mobilní aplikace. Sekce se tedy dělí na~\nameref{ss:backend}, \nameref{ss:web} a~\nameref{ss:mobile}.
 
 \subsection{Backend}
 \label{ss:backend}
@@ -15,7 +15,7 @@ Při výběru je třeba tedy dbát hlavně na bezpečnost a rychlost. Avšak je 
 \subsubsection*{JavaScript}
 JavaScript je \emph{\uv{otevřený multiplatformní skriptovací jazyk pro tvorbu a přizpůsobení aplikací v~podnikových sítích a na internetu}}~\cite{netscapecommunicationscorporation_1995_press}, jako první implementovaný prohlížečem Netscape Navigator 2.0 a rychle adaptován ostatními prohlížeči.
 
-Výhodou je multiplatformnost a jednoduchost vývoje a nasazení. Hlavní nevýhodou je dynamické typovaní, které vede k~horší udržitelnosti kódu a odhalení většiny chyb až při běhu aplikace (absence statické kontroly). Tyto neduhy se dají odstranit použitím nějakou syntaktickou nadstavbou, jako je třeba TypeScript nebo Flow, které přidávají statické typování proměnných a statickou kontrolu při překladu do JavaScriptu.
+Výhodou je multiplatformnost a jednoduchost vývoje a nasazení. Hlavní nevýhodou je dynamické typování, které vede k~horší udržitelnosti kódu a odhalení většiny chyb až při běhu aplikace (absence statické kontroly). Tyto neduhy se dají odstranit použitím nějaké syntaktické nadstavby, jako je třeba TypeScript nebo Flow, které přidávají statické typování proměnných a statickou kontrolu při překladu do JavaScriptu.
 
 JavaScript se původně vyskytoval jen v~prohlížeči, což znamená že nebyl použitelný pro vývoj desktopových a serverových aplikací. To se změnilo s~příchodem Node.js. Node.js je prostředí, které umožňuje spouštět javascriptové skripty mimo prohlížeč.
 
@@ -33,16 +33,16 @@ Webová aplikace je pro uživatele nejpřístupnější formou, nemusí nic inst
 \label{ss:javascript}
 Pro vývoj webové aplikace lze v~JavaScriptu zvolit z~mnoha možností, ať už co se týče syntaktické nadstavby (TypeScript, Flow), nebo knihoven a frameworků. Jelikož jich je velké množství, tak si jen stručně probereme tři nejpopulárnější (viz obrázek \ref{fig:popularity_plot}) a to React~\cite{facebookinc_2019_react}, Angular~\cite{googlellc_2019_angular} a Vue~\cite{you_2014_vuejs}.
 
-React je knihovna vyvíjená společností Facebook, která ho sama využívá pro tvorbu jejich aplikací, např Facebook nebo Messenger. Jeho hlavní výhodou je, možnost si spoustu věcí přizpůsobit k~vlastní potřebě (např. routing nebo globální uložiště dat), což mimo jiné vede k~menší velikosti výsledné aplikace a vyšší rychlosti. React sám o~sobě není ani závislý na prohlížeči a může být využit např. pro vývoj aplikace spouštěné z~příkazové řádky.
+React je knihovna vyvíjená společností Facebook, která ho sama využívá pro tvorbu jejich aplikací, např Facebook nebo Messenger. Jeho hlavní výhodou je možnost si spoustu věcí přizpůsobit k~vlastní potřebě (např. routing nebo globální uložiště dat), což mimo jiné vede k~menší velikosti výsledné aplikace a vyšší rychlosti. React sám o~sobě není ani závislý na prohlížeči a může být využit např. pro vývoj aplikace spouštěné z~příkazové řádky.
 
-Angular je framework od společnosti Google, taktéž využívaný v~řadě aplikací. Hlavní výhodou je, že nabízí téměř vše co může programátor potřebovat, díky čemuž nemusí řešit občasné potíže s~kompatibilitou knihoven jako u~Reactu, ale na druhou stranu je výsledná aplikace větší a pomalejší, jelikož obsahuje i nevyužívané funkce.
+Angular je framework od společnosti Google, taktéž využívaný v~řadě aplikací. Hlavní výhodou je, že nabízí téměř vše co může programátor potřebovat, díky čemuž nemusí řešit občasné potíže s~kompatibilitou knihoven jako u~Reactu. Na druhou stranu je výsledná aplikace větší a pomalejší, jelikož obsahuje i nevyužívané funkce.
 
-Vue je knihovna velmi podobná Reactu, sdílí spolu velkou část ideologií~\cite{you_2014_comparison}, ale Vue se zaměřuje na projekty malé až střední a React in na ty velké. Výhoda tedy je rychlost a jednoduchost, nevýhoda je, že s~rostoucím projektem a týmem se projekt stává méně přehledný a udržovatelný.
+Vue je knihovna velmi podobná Reactu, sdílí spolu velkou část ideologií~\cite{you_2014_comparison}, ale Vue se zaměřuje na projekty malé až střední a React i na ty velké. Výhoda tedy je rychlost a jednoduchost, nevýhoda je, že s~rostoucí velikostí se projekt stává méně přehledný a udržovatelný.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{assets/popularity_plot.png}
-    \caption[Popularita javascriptových frameworků]{Popularita javascriptových frameworků \cite{potter_2020_npm}}
+    \caption[Popularita javascriptových frameworků]{Popularita javascriptových frameworků~\cite{potter_2020_npm}}
     \label{fig:popularity_plot}
 \end{figure}
 
@@ -61,7 +61,7 @@ První a nejjednodušší možností jak vytvořit mobilní aplikaci je pouze op
 \label{sss:pwa}
 \sloppy{
     Progressive Web App, nebo Progresivní Webová Aplikace, je způsob jak z~webové aplikace udělat aplikaci mobilní bez nutnosti vytvářet nativní aplikaci. Tento způsob je kombinací~\hyperref[sss:responsive_web_app]{responzivní webové aplikace}, manifestu a service workeru.
-}Manifest je soubor udávající informace pro mobilní prohlížeč, jak se aplikace má jmenovat, popis, ikony, barevné schéma, autor atd. Jedná se o~obdobu manifestu, který mají mobilní aplikace. Service worker je speciální skript, který běží na pozadí a umožňuje načítat data, přistupovat k~notifikacím nebo poloze (na mobilu i webu) atd. V~případě, že webová aplikace splňuje všechny zmíněné náležitosti, a uživatel vstoupí na web pomocí jednoho z~prohlížečů, které podporují~\hyperref[sss:pwa]{PWA}, pak má možnost si tu aplikaci přidat na plochu mobilu a spouštět stejně jako nainstalovanou aplikaci. Takto nainstalovaná aplikace funguje i bez přístupu k~internetu, ale je to v~podstatě stažený web spuštěný v~prohlížeči. Hlavní nevýhodou je absence možnosti práce přímo s~hardwarem telefonu, takže to není vhodné např. pro mobilní hry. Dalším problémem je podpora na zařízeních s~operačním systémem iOS. Ačkoliv je společnost Apple původním tvůrcem této myšlenky~\cite{ritchie_2018_app}, tak aplikace na iOS nemají přístup k~tolika informacím a možnostem jako ty na Androidu a jsou tedy limitované.
+}Manifest je soubor udávající informace pro mobilní prohlížeč, jak se aplikace má jmenovat, popis, ikony, barevné schéma, autor atd. Jedná se o~obdobu manifestu, který mají mobilní aplikace. Service worker je speciální skript, který běží na pozadí a umožňuje načítat data, přistupovat k~notifikacím nebo poloze (na mobilu i webu) atd. V~případě, že webová aplikace splňuje všechny zmíněné náležitosti, a uživatel vstoupí na web pomocí jednoho z~prohlížečů, které podporují~\hyperref[sss:pwa]{PWA}, pak má možnost si tu aplikaci přidat na plochu mobilu a spouštět stejně jako nainstalovanou aplikaci. Takto nainstalovaná aplikace funguje i bez přístupu k~internetu, ale je to v~podstatě stažený web spuštěný v~prohlížeči. Hlavní nevýhodou je absence možnosti práce přímo s~hardwarem telefonu, takže to není vhodné např. pro mobilní hry. Dalším problémem je podpora na zařízeních s~operačním systémem iOS. Ačkoliv je společnost Apple původním tvůrcem této myšlenky~\cite{ritchie_2018_app}, tak aplikace na iOS nemají přístup k~tolika informacím a možnostem jako ty na Android a jsou tedy limitované.
 
 \subsubsection*{Hybridní aplikace}
 Hybridní aplikace jsou posledním mezikrokem mezi mobilní a webovou aplikací. Jedná se o~aplikaci webovou, která je později zkompilovaná i s~jádrem prohlížeče a může být přidaná na Android Play Store, resp. iOS App Store. Takto vytvořená aplikace má již přístup ke všem částem telefonu, stejně jako aplikace nativní, ale nevýhoda je velikost balíčku potažmo aplikace. Ta v~sobě obsahuje i část prohlížeče a aplikace má vyšší nároky na paměť a procesorový čas.
@@ -69,7 +69,7 @@ Hybridní aplikace jsou posledním mezikrokem mezi mobilní a webovou aplikací.
 \subsubsection*{Nativní aplikace}
 Poslední kategorie jsou aplikace nativní, tedy přímo určené pouze na mobilní zařízení. Existuje mnoho programovacích jazyků, které lze při vývoji použít, ať už to je Java a Kotlin pro Android nebo Objective C a Swift pro iOS. Hlavní nevýhoda tedy je mnohem více práce a potenciálně duplicitní kód. Z~toho důvodu existují různé multiplatformní frameworky, které tyto neduhy řeší.
 
-V~rámci této práce si zmíníme pouze React~Native~\cite{facebookinc_2015_reactnative}. Jedná se o~framework syntaxem velmi podobný frameworku ReactJS a důvod proč zmínit zrovna tento a ne ostatní, je možnost přepoužití kódu z~webové aplikace. Jisté části aplikace napsané v~ReactJS lze bez úpravy použít i v~React Native a obráceně. Tedy aplikace psaná za použití React Native má stejné benefity jako aplikace nativní, ale zároveň v~ní lze přepoužít části aplikace webové. Příklad takového přepoužití je zde~\cite{sepulveda_2017_share}.
+V~rámci této práce si zmíníme pouze React~Native~\cite{facebookinc_2015_reactnative}. Jedná se o~framework syntaxí velmi podobný frameworku ReactJS a důvod proč zmínit zrovna tento a ne ostatní, je možnost přepoužití kódu z~webové aplikace. Jisté části aplikace napsané v~ReactJS lze bez úpravy použít i v~React Native a obráceně. Tedy aplikace psaná za použití React Native má stejné benefity jako aplikace nativní, ale zároveň v~ní lze přepoužít části aplikace webové. Příklad takového přepoužití je v článku \emph{Share Code between React and React Native Apps}~\cite{sepulveda_2017_share}.
 
 Toto přepoužití vyplývá z~architektury samotného Reactu, kde React je knihovna, která zpracovává vstupy, ovládá stav aplikace, kontroluje změny a generuje výstupy. Následně na řadu přichází tzv. \uv{Renderer}, který funguje jako rozhraní mezi platformou (web, mobil nebo konzole) a Reactem. U~webu je tímto rozhraním knihovna \uv{React-DOM} a u~mobilu právě \uv{React Native}.
 

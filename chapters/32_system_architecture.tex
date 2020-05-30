@@ -1,6 +1,6 @@
 \section{Architektura systému}
 \label{sc:system_architecture}
-Jak již bylo zmíněno v~nefunkčních požadavcích, aplikace má být lehce rozšiřitelná. Tomuto požadavku se dá vyhovět několika způsoby, avšak ideologii JavaScriptu se nejvíce blíží je modularizace \cite{bevacqua_2018_mastering}. A~pro lepší přehlednost kódu a zjednodušení testování samotných modulů, se jednotlivé moduly řídí metodikou~\nameref{ss:clean_architecture}.
+Jak již bylo zmíněno v~nefunkčních požadavcích, aplikace má být lehce rozšiřitelná. Tomuto požadavku se dá vyhovět několika způsoby, avšak ideologii JavaScriptu se nejvíce blíží je modularizace~\cite{bevacqua_2018_mastering}. A~pro lepší přehlednost kódu a zjednodušení testování samotných modulů, se jednotlivé moduly řídí metodikou~\nameref{ss:clean_architecture}.
 
 \subsection{Modularizace}
 Aplikace byla modularizována tak, že nejprve byla rozdělena na jednotlivé domény, které je možné vidět na obrázku~\ref{fig:class_diagram}. Následně tyto domény byly rozděleny na tři části, backend, frontend a společné.
@@ -52,6 +52,6 @@ Výhodou tohoto rozdělení je přehlednost a snadné testování. Při testová
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{assets/clean_architecture.jpg}
-    \caption{Clean Architecture \cite{martin_2019_clean}}
+    \caption{Clean Architecture~\cite{martin_2019_clean}}
     \label{fig:clean_architecture}
 \end{figure}
