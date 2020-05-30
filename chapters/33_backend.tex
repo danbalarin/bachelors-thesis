@@ -76,4 +76,6 @@ interface ServerModuleModel<
     \label{code:server_module_model}
 \end{figure}
 
+\pagebreak
+
 Jelikož je potřeba vyhledávat mezi moduly, ale ne všechny entity a nejednotným způsobem, tak pro každou entitu může být specifikovaná vyhledávací query. Výsledná souhrnná vyhledávací query pak jen paralelně provolá všechny vyhledávací query z~modelů, spojí výsledky do pole a vrátí výsledek. Tento přístup umožňuje specifikovat jaké entity a případně jakým způsobem se mají vyhledávat. Další výhoda je, že na sobě moduly nijak nezávisí a další rozšíření je velmi jednoduché.
